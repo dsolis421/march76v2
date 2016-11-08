@@ -1,10 +1,36 @@
+/* grey  rgb(96, 96, 96);
+blue      rgb(0, 119, 179);
+dark blue  rgb(0, 85, 128);
+orange     rgb(230, 92, 0);
+green      rgb(136, 204, 0);
+dark green   rgb(85, 128, 0);
+*/
 body {
   color: rgb(96, 96, 96);
 }
-.row {
+h1, h2, h3, h4, h5, .row {
   margin: 0;
 }
-#intro, #bio, #resume {
+#mar-nav {
+  background-color: white;
+  border: none;
+}
+.bg-ltblue {
+  background-color: rgb(0, 119, 179);
+}
+.bg-dkblue {
+  background-color: rgb(0, 85, 128);
+}
+.bg-orange {
+  background-color: rgb(230, 92, 0);
+}
+.bg-green {
+  background-color: rgb(136, 204, 0);
+}
+.bg-dkgreen {
+  background-color: rgb(85, 128, 0);
+}
+#intro {
   height: 100vh;
 }
 #intro {
@@ -16,21 +42,25 @@ body {
   text-align: right;
 }
 #intro h1 {
-  font-family: 'Allerta Stencil', fantasy;
-  font-size: 80px;
-  font-weight: 500;
+  font-family: 'Archivo Black', fantasy;
+  font-size: 150px;
+  font-weight: 900;
   text-align: right;
   text-shadow: 2px 2px white;
 }
-#bio {
-  padding: 5% 0;
+#intro h1:nth-of-type(2) {
+  margin-top: -50px;
 }
-#biopanel {
+#bio, #portfolio {
+  padding: 5% 0;
+  height: 700px;
+}
+#biopanel, #portpanel {
   height: 600px;
   box-shadow: 0px 5px 15px rgb(96, 96, 96);
   color: white;
 }
-#biopanel > div {
+#biopanel > div, #portpanel > div {
   height: 600px;
 }
 #biopanel > div > div {
@@ -39,22 +69,112 @@ body {
 #biopanel > div > div > div, #biopanel > div > div > div > div  {
   height: 300px;
 }
-#biopanel h2 {
-  margin: 0;
+#biopanel h1, #portpanel h1 {
   text-align: center;
   line-height: 300px;
-  font-family: 'Allerta Stencil', fantasy;
-  font-size: 40px;
+  font-family: 'Archivo Black', fantasy;
+  font-size: 100px;
+  color: rgb(96, 96, 96);
+}
+#biopanel h2 {
+  line-height: 300px;
+  font-size: 35px;
+  text-align: center;
 }
 #biopic {
   height: 100%;
   background-image: url("../img/ds2.png");
-  background-position: center;
+  background-position: top;
   background-size: cover;
 }
-.bluepainted div:nth-child(odd) {
-  background-color: rgb(0, 119, 179);
+#portpanel > div {
+  padding: 0;
+  text-align: center;
 }
-.bluepainted div:nth-child(even) {
-  background-color: rgb(0, 85, 128);
+.site-wrapper {
+  overflow: hidden;
+}
+#portpanel img {
+  min-width: 100%;
+  min-height: 100%;
+}
+#portpanel a {
+  color: white;
+  text-decoration: none;
+}
+#portpanel .bg-ltblue {
+  padding: 5% 1%;
+}
+.port-lg {
+  height: 400px;
+}
+.port-md {
+  height: 300px;
+}
+.port-sm {
+  height: 200px;
+}
+.port-xs {
+  height: 100px;
+}
+.port-sm h2 {
+  line-height: 200px;
+}
+#skill-carousel h2 {
+  line-height: 100px;
+}
+footer {
+  height: 300px;
+  background-color: rgb(96, 96, 96);
+}
+@media screen and (max-width: 1199px){
+  #intro {
+    color: rgb(136, 204, 0);
+    padding: 50% 5%;
+    background-image: url("../img/ds3.png");
+  }
+  #intro h3 {
+    color: rgb(0, 119, 179);
+    text-shadow: 1px 1px white;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  #bio {
+    height: 1000px;
+  }
+  #biopanel {
+    height: 900px;
+  }
+  #portfolio{
+    height: 1300px;
+  }
+  #portpanel {
+    height: 1200px;
+  }
+}
+@media screen and (max-width: 767px){
+  #intro {
+    padding: 90% 5%;
+  }
+  #intro h1 {
+    font-size: 80px;
+  }
+  #intro h1:nth-of-type(2) {
+    margin-top: -30px;
+  }
+  #bio {
+    height: 2000px;
+  }
+  #biopanel {
+    height: 1800px;
+  }
+  #biopanel > div > div > div {
+    height: 900px;
+  }
+  #portfolio {
+    height: 2500px;
+  }
+  #portpanel {
+    height: 2400px;
+  }
 }

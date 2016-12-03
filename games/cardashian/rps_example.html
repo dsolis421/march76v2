@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>March 76 | Games</title>
+    <link rel="stylesheet" href="css/css-reset.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/rps-style.css" />
+    <script src="https://use.fontawesome.com/9822dc9e23.js"></script>
+</head>
+
+<body class="container">
+    <header>
+        <h1>Cardashiane</h1>
+    </header>
+    <main class="container">
+        <section class="row">
+            <div class="col-sm-12 col-lg-8" id="field">
+                <section class="row">
+                    <header id="select">
+                        <h2 class="hidden-xs">Select a Cardashiane</h2>
+                        <div class="dropdown visible-xs" id="mobilenav">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Cardashiane<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a class="pick" id="Cim" onclick="setPlayerOne('cim')" href="javascript:;">Cim<img class="navpic" src="img/svgCim.png" /></a>
+                                </li>
+                                <li>
+                                    <a class="pick" id="Chloe" onclick="setPlayerOne('chloe')" href="javascript:;">Chloe<img class="navpic" src="img/svgChloe.png" /></a>
+                                </li>
+                                <li>
+                                    <a class="pick" id="Courtney" onclick="setPlayerOne('courtney')" href="javascript:;">Courtney<img class="navpic" src="img/svgCourtney.png" /></a>
+                                </li>
+                                <li><a href="#helptext">How To Play</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </header>
+                    <div class="col-sm-4 hidden-xs">
+                        <figure>
+                            <img class="img-responsive" src="img/svgCim.png" />
+                            <figcaption>
+                                <a class="pick" id="Cim" onclick="setPlayerOne('cim')" href="javascript:;">Cim</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-4 hidden-xs">
+                        <figure>
+                            <img class="img-responsive" src="img/svgChloe.png" />
+                            <figcaption>
+                                <a class="pick" id="Chloe" onclick="setPlayerOne('chloe')" href="javascript:;">Chloe</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-4 hidden-xs">
+                        <figure>
+                            <img class="img-responsive" src="img/svgCourtney.png" />
+                            <figcaption>
+                                <a class="pick" id="Courtney" onclick="setPlayerOne('courtney')" href="javascript:;">Courtney</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="row" id="play">
+                    <div class="col-sm-4">
+                        <figure>
+                            <img class="img-responsive" src="img/placeholder.png" id="player1" />
+                            <figcaption>
+                                <h2 id="p1name"></h2>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-4">
+                        <h2 id="result"></h2>
+                        <h2>versus</h2>
+                    </div>
+                    <div class="col-sm-4">
+                        <figure>
+                            <img class="img-responsive" src="img/placeholder.png" id="player2" />
+                            <figcaption>
+                                <h2 id="p2name"></h2>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </div>
+            <aside class="col-lg-4" id="helptext">
+                <h2>How To</h2>
+                <p>Cardashiane is a Javascript take on rock, paper, scissors.
+                    <ol>
+                        <li>Select a Cardashiane sister.</li>
+                        <li>Wait a few seconds.</li>
+                        <li>The browser will randomly make a selection to counter.</li>
+                        <li>The winning play is displayed</li>
+                        <li>Make another selection to play again.</li>
+                    </ol>
+                </p>
+                <h3>Ranks</h3>
+                <ul>
+                  <li>Cim beats Courtney</li>
+                  <li>Chloe beats Kim</li>
+                  <li>Courtney beats Chloe</li>
+                </ul>
+            </aside>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/rps.js"></script>
+    </main>
+
+</body>
+
+</html>

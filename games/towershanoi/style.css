@@ -1,0 +1,104 @@
+body {
+  width: 70%;
+  margin: 0 auto;
+  font-family: 'Days One', sans-serif;
+}
+header h1 {
+  display: inline-block;
+}
+#reset-game {
+  margin-top: 20px;
+  padding: 0;
+  float: right;
+  width: 180px;
+  height: 40px;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+#reset-game h2 {
+  margin: 0;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+#reset-game:hover {
+  cursor: pointer;
+}
+
+[data-stack] {
+  position: relative;
+  clear: right;
+  float: left;
+  align-items: center;
+  height: 300px;
+  width: 102px;
+  background-color: aliceblue;
+  margin: 25px;
+  border: 1px solid black;
+}
+
+[data-stack] span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  width: 102px;
+  text-align: center;
+}
+
+[data-block] {
+  height: 25px;
+  margin: 0 auto;
+}
+
+[data-block="25"] {
+  position: absolute;
+  bottom: 75px;
+  margin: 0 31px;
+  width: 40px;
+  background: linear-gradient(-90deg, blue, blue, white, blue);
+}
+
+[data-block="50"] {
+  position: absolute;
+  bottom: 50px;
+  margin: 0 21px;
+  width: 60px;
+  background: linear-gradient(-90deg, green, green, white, green);
+}
+
+[data-block="75"] {
+  position: absolute;
+  bottom: 25px;
+  margin: 0 11px;
+  width: 80px;
+  background: linear-gradient(-90deg, red, red, white, red);
+}
+
+[data-block="100"] {
+  position: absolute;
+  bottom: 0;
+  margin: 0 1px;
+  width: 100px;
+  background: linear-gradient(-90deg, black, black, white, black);
+}
+
+#announce-game-won, #move-count {
+  height: 70px;
+  font-size: 50px;
+  text-align: center;
+}
+.clear-both {
+  clear: both;
+}
+#help {
+
+  margin: 10px 0 50px 0;
+}
+
+#help h1 {
+  border-bottom: 3px solid black;
+}

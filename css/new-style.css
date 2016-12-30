@@ -6,7 +6,7 @@ green      rgb(136, 204, 0);
 dark green   rgb(85, 128, 0);
 */
 body {
-  color: rgb(96, 96, 96);
+  color: white;
 }
 h1, h2, h3, h4, h5, .row {
   margin: 0;
@@ -14,6 +14,7 @@ h1, h2, h3, h4, h5, .row {
 #mar-nav {
   background-color: white;
   border: none;
+  display: none;
 }
 .bg-ltblue {
   background-color: rgb(0, 119, 179);
@@ -30,151 +31,137 @@ h1, h2, h3, h4, h5, .row {
 .bg-dkgreen {
   background-color: rgb(85, 128, 0);
 }
-#intro {
-  height: 100vh;
+#site-space {
+  height: 2350px;
+  position: relative;
+  text-align: right;
+  overflow: hidden;
 }
-#intro {
-  background-image: url("../img/Mar76_bg.svg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 20% 5%;
+#name {
+  color: rgb(96, 96, 96);
+  position: absolute;
+  top: -275px;
+  left: -100px;
+  border-radius: 100%;
+  width: 800px;
+  height: 800px;
+  padding-top: 270px;
+  padding-right: 90px;
   text-align: right;
 }
-#intro h1 {
+#name h1 {
   font-family: 'Archivo Black', fantasy;
   font-size: 150px;
   font-weight: 900;
-  text-align: right;
-  text-shadow: 2px 2px white;
 }
-#intro h1:nth-of-type(2) {
+#name h1:nth-of-type(2) {
   margin-top: -50px;
 }
-#bio, #portfolio {
-  padding: 5% 0;
-  height: 700px;
-}
-#biopanel, #portpanel {
-  height: 600px;
-  box-shadow: 0px 5px 15px rgb(96, 96, 96);
-  color: white;
-}
-#biopanel > div, #portpanel > div {
-  height: 600px;
-}
-#biopanel > div > div {
-  padding: 0;
-}
-#biopanel > div > div > div, #biopanel > div > div > div > div  {
-  height: 300px;
-}
-#biopanel h1, #portpanel h1 {
-  text-align: center;
-  line-height: 300px;
-  font-family: 'Archivo Black', fantasy;
-  font-size: 100px;
-  color: rgb(96, 96, 96);
-}
-#biopanel h2 {
-  line-height: 300px;
-  font-size: 35px;
-  text-align: center;
-}
-#biopic {
-  height: 100%;
-  background-image: url("../img/ds2.png");
-  background-position: top;
+#site-space div:nth-of-type(2) {
+  float: right;
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 600px;
+  height: 1000px;
+  border-radius: 100%;
+  background-image: url('../img/ds4.png');
+  background-position: bottom;
   background-size: cover;
+  background-clip: border-box;
+  background-blend-mode: multiply;
+  background-color: rgb(0, 119, 179);
 }
-#portpanel > div {
-  padding: 0;
-  text-align: center;
+#intro-menu {
+  position: absolute;
+  right: -160px;
+  top: 350px;
+  width: 1300px;
+  height: 300px;
+  border-radius: 100%;
+  padding-left: 100px;
+  padding-top: 110px;
+  border-radius: 100%;
+  text-align: left;
 }
-.site-wrapper {
-  overflow: hidden;
+#intro-menu h1 {
+  font-family: 'Archivo Black', fantasy;
+  font-size: 60px;
+  font-weight: 300;
+  display: inline-block;
+  margin: 0 20px;
 }
-#portpanel img {
-  min-width: 100%;
-  min-height: 100%;
-}
-#portpanel a {
+#intro-menu a {
   color: white;
   text-decoration: none;
 }
-#portpanel .bg-ltblue {
-  padding: 5% 1%;
+/*#intro-menu h1:first-of-type {
+  padding-left: 350px;
 }
-.port-lg {
-  height: 400px;
+#intro-menu h1:nth-of-type(2) {
+  padding-left: 500px;
 }
-.port-md {
-  height: 300px;
+#intro-menu h1:nth-of-type(3) {
+  padding-left: 400px;
+}*/
+#bio-bowl, #port-bowl, #game-bowl, #media-bowl {
+  border-radius: 100%;
+  padding: 30px 30px;;
+  width: 1300px;
+  height: 500px;
+  text-align: center;
 }
-.port-sm {
-  height: 200px;
+#bio-bowl h1, #port-bowl h1, #game-bowl h1, #media-bowl h1 {
+  font-size: 80px;
+  font-family: 'Archivo Black', fantasy;
+  font-weight: 300;
+  margin-bottom: 15px;
 }
-.port-xs {
-  height: 100px;
+#bio-bowl h2, #port-bowl h2, #game-bowl h2 {
+  font-size: 55px;
+  display: inline-block;
+  margin: 0 25px;
 }
-.port-sm h2 {
-  line-height: 200px;
+#bio-bowl h3, #port-bowl h3, #game-bowl h3 {
+  font-size: 40px;
+  display: inline-block;
+  margin: 0 25px;
 }
-#skill-carousel h2 {
-  line-height: 100px;
+#bio-bowl h4 {
+  font-size: 45px;
+  margin: 25px 15px;
+}
+#bio-bowl {
+  position: absolute;
+  top: 650px;
+  left: -50px;
+  background-color: rgb(96, 96, 96);
+}
+#port-bowl {
+  position: absolute;
+  top: 1050px;
+  right: -50px;
+}
+#game-bowl {
+  position: absolute;
+  top: 1450px;
+  left: -50px;
+}
+#media-bowl {
+  position: absolute;
+  top: 1850px;
+  right: -50px;
 }
 footer {
-  height: 300px;
+  height: 400px;
   background-color: rgb(96, 96, 96);
 }
 @media screen and (max-width: 1199px){
-  #intro {
-    color: rgb(136, 204, 0);
-    padding: 50% 5%;
-    background-image: url("../img/ds3.png");
-  }
-  #intro h3 {
-    color: rgb(0, 119, 179);
-    text-shadow: 1px 1px white;
-  }
+
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  #bio {
-    height: 1000px;
-  }
-  #biopanel {
-    height: 900px;
-  }
-  #portfolio{
-    height: 1300px;
-  }
-  #portpanel {
-    height: 1200px;
-  }
+
 }
 @media screen and (max-width: 767px){
-  #intro {
-    padding: 90% 5%;
-  }
-  #intro h1 {
-    font-size: 80px;
-  }
-  #intro h1:nth-of-type(2) {
-    margin-top: -30px;
-  }
-  #bio {
-    height: 2000px;
-  }
-  #biopanel {
-    height: 1800px;
-  }
-  #biopanel > div > div > div {
-    height: 900px;
-  }
-  #portfolio {
-    height: 2500px;
-  }
-  #portpanel {
-    height: 2400px;
-  }
+
 }

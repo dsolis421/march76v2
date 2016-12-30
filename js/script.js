@@ -5,10 +5,10 @@ var $skillsindex = 1;
 
 function loopSkills() {
   setInterval(function(){
-    $('#skill-carousel h2').fadeOut("slow","linear",function(){
-      $('#skill-carousel h2').html($skills[$skillsindex]);
+    $('#skill-carousel').fadeOut("slow","swing",function(){
+      $('#skill-carousel').html($skills[$skillsindex]);
     });
-    $('#skill-carousel h2').fadeIn("slow","linear");
+    $('#skill-carousel').fadeIn("slow","swing");
     if ($skillsindex === 4) {
       $skillsindex = 0;
     } else {
@@ -18,5 +18,20 @@ function loopSkills() {
 }
 
 loopSkills();
+
+  var $scroll = $(document).scrollTop();
+
+  function STop() {
+    console.log("scroll is " + $scroll);
+  }
+
+  $(document).scroll(function(){
+    $scroll = $(document).scrollTop();
+    if ($scroll > 150) {
+        $('#mar-nav').fadeIn(500,"swing");
+    } else if ($scroll == 0) {
+        $('#mar-nav').fadeOut(500,"swing");
+    }
+  })
 
 })

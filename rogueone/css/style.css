@@ -1,0 +1,143 @@
+/*gold color  rgb(160, 128, 122)*/
+body {
+  background-color: #000;
+  color: white;
+}
+h1, h2, h3, h4, h5, .row {
+  margin: 0px;
+}
+#intro {
+  height: 100vh;
+  background-image: url("../img/Rogue-One-Death-Star-Installment.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 30vh;
+}
+#intro img {
+  opacity: 0;
+}
+#cast, #trivia {
+  height: 740px;
+  padding-top: 70px;
+}
+#cast h3, #media h3, #trivia h3 {
+  font-weight: 600;
+  font-size: 30px;
+  color:  rgb(160, 128, 122);
+  margin-bottom: 20px;
+}
+#cast p {
+  font-size: 18px;
+}
+#cast > div > div > div, #cast > div > div > div > div  {
+  height: 300px;
+}
+.divide {
+  background: linear-gradient(90deg, black, rgb(160, 128, 122));
+}
+.castpic {
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+}
+.cast-name {
+  padding-top: 95%;
+  padding-left: 3%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0,0,0,.5);
+  transition: 500ms ease;
+}
+.cast-name:hover {
+  opacity: 1;
+  transition: 500ms ease;
+}
+#jyn {
+ background-image: url("../img/jynerso.jpg");
+}
+#galen {
+  background-image: url("../img/galenerso.jpg");
+}
+#bodhi {
+  background-image: url("../img/bodhirook.jpg");
+}
+#andor {
+  background-image: url("../img/cassianandor.jpg");
+}
+#chirrut {
+  background-image: url("../img/chirrutimwe.jpg");
+}
+#base {
+  background-image: url("../img/basemalbus.jpg");
+}
+#saw {
+  background-image: url("../img/sawgerrera.jpg");
+}
+#mon {
+  background-image: url("../img/monmothma.jpg");
+}
+#orson {
+  background-image: url("../img/orsonkrennic.png");
+}
+#darth {
+  background-image: url("../img/darthvader.jpg");
+}
+#media {
+  height: 100vh;
+  background-image: url("../img/rogueonecastbg.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 10%;
+}
+#media > div {
+  background-color: rgba(0, 0, 0, .5);
+  height: 600px;
+}
+#media > div > div:first-of-type {
+  padding: 3% 0 0 3%;
+}
+#media h3:nth-of-type(2) {
+  margin-top: 50px;
+}
+#media h4 {
+  width: auto;
+  margin: 10px 0px 10px 10px;
+}
+#media span:hover {
+  cursor: pointer;
+}
+#media span {
+  margin-left: 25px;
+}
+#playback {
+  height: 550px;
+  width: 90%;
+  margin: 25px auto;
+}
+#playback h1 {
+  line-height: 550px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+}
+.questions {
+  height: 300px;
+}
+.questions p, .questions label {
+  font-size: 20px;
+}
+#trivia-submit {
+  width: 80%;
+  height: 46px;
+  border: 2px solid white;
+  text-align: center;
+  margin: 5px auto;
+}
+#trivia-submit h4 {
+  line-height: 46px;
+  font-size: 20px;
+}

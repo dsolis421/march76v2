@@ -68,7 +68,7 @@ h3 {
   font-size: 20px;
 }
 .available {
-  float: left;
+  float: right;
   background-color: rgba(68, 102, 0, 1);
   height: 370px;
   width: 220px;

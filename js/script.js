@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 var $skills = ['CSS3','JavaScript','jQuery','Bootstrap','HTML5'];
+var $bios = ['HUSBAND','GAMER','DOG LOVER','PROJECT MANAGER','DATA ANALYST','WEB DEVELOPER'];
+var $bioindex = 1;
 var $skillsindex = 1;
 
 function loopSkills() {
@@ -17,7 +19,22 @@ function loopSkills() {
   },5000)
 }
 
-loopSkills();
+function loopBios() {
+  setInterval(function(){
+    $('#bio-carousel').fadeOut("slow","swing",function(){
+      $('#bio-carousel').html($bios[$bioindex]);
+    });
+    $('#bio-carousel').fadeIn("slow","swing");
+    if ($bioindex === 4) {
+      $bioindex = 0;
+    } else {
+    $bioindex++;
+    }
+  },5000)
+}
+
+loopBios();
+//loopSkills();
 
   var $scroll = $(document).scrollTop();
 

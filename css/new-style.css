@@ -35,185 +35,62 @@ a, a:hover, a:visited, a:focus {
 .bg-dkgreen {
   background-color: rgb(85, 128, 0);
 }
+#name-header {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  padding: 50px;
+  text-align: center;
+  color: rgba(255, 255, 255, .8);
+  background: linear-gradient(-182deg, rgb(51, 102, 153), rgb(51, 102, 153), rgb(51, 102, 153), rgb(31, 96, 31));
+  font-family: 'Archivo Black', sans-serif;
+}
+#name-header h1 {
+  font-size: 150px;
+  margin-left: 0;
+}
+#name-header svg {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+}
 #site-space {
   height: 1800px;
-  position: relative;
-  text-align: right;
-  overflow: hidden;
-}
-#name {
-  color: rgb( 96, 96, 96);
-  position: absolute;
-  top: -275px;
-  left: -100px;
-  border-radius: 100%;
-  width: 800px;
-  height: 800px;
-  padding-top: 270px;
-  padding-right: 90px;
-  text-align: right;
-}
-#name h1 {
-  font-family: 'Archivo Black', fantasy;
-  font-size: 150px;
-  font-weight: 900;
-}
-#name h1:nth-of-type(2) {
-  margin-top: -50px;
-}
-#site-space div:nth-of-type(2) {
-  float: right;
-  position: absolute;
-  right: -100px;
-  top: -100px;
-  width: 600px;
-  height: 1000px;
-  border-radius: 100%;
-  background-image: url('../img/ds4.png');
-  background-position: bottom;
-  background-size: cover;
-  background-clip: border-box;
-  background-blend-mode: multiply;
-  background-color: rgb(0, 119, 179);
-}
-#intro-menu {
-  position: absolute;
-  right: -160px;
-  top: 350px;
-  width: 1300px;
-  height: 300px;
-  border-radius: 100%;
-  padding-left: 70px;
-  border-radius: 100%;
-  text-align: left;
-}
-#intro-menu h1 {
-  font-family: 'Archivo Black', fantasy;
-  font-size: 65px;
-  font-weight: 300;
-  line-height: 300px;
-  display: inline-block;
-  margin: 0 20px;
-}
-
-/*#intro-menu h1:first-of-type {
-  padding-left: 350px;
-}
-#intro-menu h1:nth-of-type(2) {
-  padding-left: 500px;
-}
-#intro-menu h1:nth-of-type(3) {
-  padding-left: 400px;
-}*/
-#bio-bowl, #port-bowl, #game-bowl, #media-bowl {
-  border-radius: 100%;
-  padding: 45px 30px;;
-  width: 1300px;
-  height: 500px;
-  text-align: center;
-}
-#bio-bowl h1, #port-bowl h1, #game-bowl h1, #media-bowl h1 {
-  font-size: 80px;
-  font-family: 'Archivo Black', fantasy;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-#bio-bowl h2, #port-bowl h2, #game-bowl h2 {
-  font-size: 55px;
-  display: inline-block;
-  margin: 10px 25px;
-}
-#bio-bowl h3, #port-bowl h3, #game-bowl h3 {
-  font-size: 40px;
-  display: inline-block;
-  margin: 10px 25px;
-}
-#bio-bowl h4 {
-  font-size: 45px;
-  margin: 25px 15px;
+  color: black;
 }
 #bio-bowl {
-  position: absolute;
-  top: 650px;
-  left: -50px;
-  background-color: rgb(96, 96, 96);
+  padding: 50px 0;
+  color: rgb(51, 102, 153);
+  text-align: center;
+  height: 200px;
+}
+
+#bio-bowl h1, #bio-bowl span {
+  font-size: 90px;
+  font-weight: 800;
 }
 #port-bowl {
-  position: absolute;
-  top: 1050px;
-  right: -50px;
+  background: linear-gradient(-182deg, rgb(31, 96, 31), rgb(51, 102, 153), rgb(51, 102, 153), rgb(31, 96, 31));
+  position: relative;
+  height: 800px;
 }
-#game-bowl {
+#port-bowl svg:first-of-type {
   position: absolute;
-  top: 1450px;
-  left: -50px;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  top: 0;
 }
-#media-bowl {
+#port-bowl svg:last-of-type {
   position: absolute;
-  top: 1850px;
-  right: -50px;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
 }
 footer {
-  padding-top: 20px;
-  height: 400px;
-  background-color: rgb(96, 96, 96);
-  text-align: center;
-}
-footer span {
-  margin: 10px 10px;
-}
-footer img {
-  margin: 20px 0;
-  max-width: 100%;
-}
-@media screen and (min-width: 960px) and (max-width: 1130px) {
-  #name {
-    top: -275px;
-    left: -100px;
-    width: 720px;
-    height: 720px;
-    padding-top: 270px;
-    padding-right: 90px;
-  }
-  #name h1 {
-    font-size: 130px;
-    font-weight: 900;
-  }
-  #site-space div:nth-of-type(2) {
-    right: -100px;
-    top: -100px;
-    width: 500px;
-    height: 900px;
-  }
-  #intro-menu {
-    right: -160px;
-    top: 350px;
-    width: 1300px;
-    height: 250px;
-    padding-left: 200px;
-    border-radius: 100%;
-  }
-  #intro-menu h1 {
-    font-size: 60px;
-    font-weight: 300;
-    line-height: 250px;
-    margin: 0 15px;
-  }
-  #bio-bowl, #game-bowl {
-    border-radius: 100%;
-    padding: 45px 200px 30px 20px;
-    width: 1300px;
-    height: 500px;
-    text-align: center;
-  }
-  #port-bowl, #media-bowl {
-    border-radius: 100%;
-    padding: 45px 30px;;
-    width: 1300px;
-    height: 500px;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 767px){
-
+  height: 300px;
+  background-color: rgb(53, 53, 53);
 }

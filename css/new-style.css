@@ -41,20 +41,45 @@ a, a:hover, a:visited, a:focus {
   height: 550px;
   padding: 50px;
   text-align: center;
-  color: rgba(255, 255, 255, .8);
-  background: linear-gradient(-182deg, rgb(51, 102, 153), rgb(51, 102, 153), rgb(51, 102, 153), rgb(31, 96, 31));
+  color: white;
+  background: linear-gradient(-180deg, rgb(0, 153, 51), rgb(0, 153, 255));
   font-family: 'Archivo Black', sans-serif;
+  overflow: hidden;
 }
 #name-header h1 {
   font-size: 150px;
-  margin-left: 0;
 }
 #name-header svg {
   position: absolute;
+  margin-top: 225px;
+  height: 120;
   width: 100%;
-  height: 70px;
-  left: 0;
   bottom: 0;
+  left: 0;
+}
+.svg-light:first-of-type {
+  fill: rgba(255, 255, 255, .2);
+  cx: 110%;
+  cy: 90;
+  rx: 80%;
+  ry: 60%;
+}
+.svg-light:nth-of-type(2) {
+  fill: rgba(255, 255, 255, .5);
+  cx: 10%;
+  cy: 95;
+  rx: 70%;
+  ry: 50%;
+}
+.svg-light:last-of-type {
+  fill: rgba(255, 255, 255, 1);
+  cx: 50%;
+  cy: 180;
+  rx: 60%;
+  ry: 80%;
+}
+.svg-dkgreen {
+
 }
 #site-space {
   height: 1800px;

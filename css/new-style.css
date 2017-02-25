@@ -10,9 +10,10 @@ body {
 }
 h1, h2, h3, h4, h5, .row {
   margin: 0;
+  padding: 0;
 }
 a, a:hover, a:visited, a:focus {
-  color: white;
+  color: inherit;
   text-decoration: none;
 }
 #mar-nav {
@@ -40,6 +41,10 @@ a, a:hover, a:visited, a:focus {
   background-color: rgba(255, 255, 255, .5);
   padding: 2px 20px;
   font-size: 35px;
+}
+#name-header i {
+  display: block;
+  margin-top: 90px;
 }
 #name-header svg {
   position: absolute;
@@ -88,12 +93,15 @@ a, a:hover, a:visited, a:focus {
   height: 100%;
 }
 #work-scroll {
-  margin-top: 90px;
+  position: absolute;
+  top: 100px;
+  left: 0;
 }
 #port-bowl {
   background: linear-gradient(-180deg, rgb(0, 153, 255), rgb(0, 153, 51));
   position: relative;
   height: 1000px;
+  padding-top: 190px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -128,7 +136,7 @@ a, a:hover, a:visited, a:focus {
   ry: 80%;
 }
 #port-bowl > div {
-  margin: 190px auto 0 auto;
+  margin: 30px auto 0 auto;
   padding: 10px;
   text-align: center;
   color: rgb(53, 53, 53);
@@ -162,10 +170,63 @@ footer {
   background-color: rgb(53, 53, 53);
   text-align: center;
 }
+footer img {
+  width: 98%;
+}
 footer a {
   margin: 0 15px;
 }
 footer h4 {
   font-size: 20px;
   margin: 10px 0;
+}
+@media screen and (min-width: 877px) and (max-width: 1306px) {
+  #name-header h1 {
+    font-size: 100px;
+  }
+  #name-header i {
+    margin-top: 50px;
+  }
+  #port-bowl {
+    height: 1700px;
+  }
+}
+@media screen and (max-width: 876px) {
+  #name-header {
+    padding: 5px;
+  }
+  #name-header h1 {
+    font-size: 90px;
+  }
+  #port-bowl {
+    height: 2470px;
+  }
+}
+@media screen and (max-width: 412px) {
+  #name-header {
+    padding: 5px;
+  }
+  #name-header h1 {
+    font-size: 70px;
+  }
+  #name-header span {
+    background-color: rgba(255, 255, 255, .5);
+    font-size: 18px;
+  }
+  #bio-bowl p {
+    font-size: 20px;
+  }
+  #bio-bowl > div, #port-bowl > div {
+    padding: 0;
+    width: 98%;
+  }
+  #port-bowl > div > div {
+    width: 90%;
+  }
+  #port-bowl h2 {
+    font-size: 18px;
+  }
+  footer {
+    height: 900px;
+  }
 }

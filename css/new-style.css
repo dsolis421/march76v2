@@ -20,21 +20,6 @@ a, a:hover, a:visited, a:focus {
   border: none;
   display: none;
 }
-.bg-ltblue {
-  background-color: rgb(0, 119, 179);
-}
-.bg-dkblue {
-  background-color: rgb(0, 85, 128);
-}
-.bg-orange {
-  background-color: rgb(230, 92, 0);
-}
-.bg-green {
-  background-color: rgb(136, 204, 0);
-}
-.bg-dkgreen {
-  background-color: rgb(85, 128, 0);
-}
 #name-header {
   position: relative;
   width: 100%;
@@ -48,6 +33,13 @@ a, a:hover, a:visited, a:focus {
 }
 #name-header h1 {
   font-size: 150px;
+  text-shadow: 2px 2px 1px rgb(53, 53, 53);
+}
+#name-header span {
+  color: rgb(53, 53, 53);
+  background-color: rgba(255, 255, 255, .5);
+  padding: 2px 20px;
+  font-size: 35px;
 }
 #name-header svg {
   position: absolute;
@@ -79,14 +71,24 @@ a, a:hover, a:visited, a:focus {
   ry: 80%;
 }
 #bio-bowl {
-  color: rgb(51, 102, 153);
-  text-align: center;
+  color: rgb(53, 53, 53);
+  text-align: left;
   height: 200px;
 }
-#bio-bowl h1, #bio-bowl span {
-  font-size: 90px;
-  font-weight: 800;
-  line-height: 200px;
+#bio-bowl > div {
+  width: 430px;
+  height: 100%;
+  margin: 0 auto;
+}
+#bio-bowl p {
+  font-size: 27px;
+}
+#bio-bowl i {
+  width: auto;
+  height: 100%;
+}
+#work-scroll {
+  margin-top: 90px;
 }
 #port-bowl {
   background: linear-gradient(-180deg, rgb(0, 153, 255), rgb(0, 153, 51));
@@ -132,7 +134,7 @@ a, a:hover, a:visited, a:focus {
   color: rgb(53, 53, 53);
   background-color: rgba(255, 255, 255, .5);
   height: 700px;
-  width: 400px;
+  width: 430px;
 }
 #port-bowl > div h4 {
   font-size: 30px;
@@ -148,7 +150,10 @@ a, a:hover, a:visited, a:focus {
   height: 130px;
   width: 130px;
 }
-.icon-contr {
+#port-bowl h2 {
+  font-size: 25px;
+}
+#port-bowl h2, .icon-contr {
   line-height: 130px;
 }
 footer {

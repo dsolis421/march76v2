@@ -5,7 +5,7 @@ var $bios = ['HUSBAND','GAMER','DOG LOVER','PROJECT MANAGER','DATA ANALYST','WEB
 var $bioindex = 1;
 var $skillsindex = 1;
 
-function loopSkills() {
+/*function loopSkills() {
   setInterval(function(){
     $('#skill-carousel').fadeOut("slow","swing",function(){
       $('#skill-carousel').html($skills[$skillsindex]);
@@ -17,7 +17,7 @@ function loopSkills() {
     $skillsindex++;
     }
   },5000)
-}
+}*/
 
 function loopBios() {
   setInterval(function(){

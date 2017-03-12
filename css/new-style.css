@@ -73,7 +73,7 @@ a, a:hover, a:visited, a:focus {
   cx: 50%;
   cy: 180;
   rx: 60%;
-  ry: 80%;
+  ry: 95%;
 }
 #bio-bowl {
   color: rgb(53, 53, 53);
@@ -101,15 +101,16 @@ a, a:hover, a:visited, a:focus {
   background: linear-gradient(-180deg, rgb(0, 153, 255), rgb(0, 153, 51));
   position: relative;
   height: 1000px;
+  width: 100%;
   padding-top: 190px;
+  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   overflow: hidden;
 }
 #port-bowl svg {
   position: absolute;
-  height: 120;
+  height: 120px;
   width: 100%;
   top: 0;
   left: 0;
@@ -133,7 +134,7 @@ a, a:hover, a:visited, a:focus {
   cx: 50%;
   cy: -60;
   rx: 60%;
-  ry: 80%;
+  ry: 95%;
 }
 #port-bowl > div {
   margin: 30px auto 0 auto;

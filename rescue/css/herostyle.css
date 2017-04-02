@@ -16,6 +16,7 @@ h3 {
 #rescue-nav {
   border: none;
   background-color: white;
+  color: black;
 }
 .row {
   margin: 0;
@@ -152,6 +153,40 @@ footer p {
 input {
   margin: 10px 0px 0px 10px;
 }
+@media screen and (max-width: 367px) {
+  #intro, #donate, #bizsupport, #foster {
+    padding: 1%;
+  }
+  #adoption, #dogs, #donate, #donate > div {
+    width: 100%;
+  }
+  .insetblk, .insettext {
+    width: auto;
+    height: auto;
+  }
+  #dogs {
+    margin: 15px 0;
+  }
+  #bizsupport {
+    height: auto;
+  }
+
+  #bizsupport > div > div {
+    margin: 10px auto;
+  }
+
+  footer input {
+    width: 90%;
+  }
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
 @media screen and (min-width: 1200px) and (max-width: 1411px) {
   #adoption {
     height: 1150px;
@@ -176,54 +211,11 @@ input {
     padding-left: 3%;
   }
 }
-@media screen and (max-width: 1026px) {
-  #rescue-nav a, #rescue-nav a:visited, #rescue-nav a:focus {
-    font-size: 15px;
-    color: black;
-  }
-  #adoption {
-    height: 3000px;
-  }
-  #adoption > .row {
-    height: 1800px;
-    padding: 15px;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 1026px) {
   .available {
     width: 290px;
   }
   #dogs {
     padding-left: 5%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .insettext > p, #donate p {
-    font-size: 17px;
-  }
-  #adoption {
-    height: 2000px;
-  }
-  #adoption > .row {
-    height: 1990px;
-    padding: 15px;
-  }
-  .available {
-    width: 50%;
-  }
-  #dogs {
-    padding-left: 5%;
-  }
-  #adopthero {
-    margin: 30px auto;
-  }
-  #donate > div {
-    width: 400px;
-  }
-  #bizsupport {
-    height: 550px;
-  }
-  #bizsupport img {
-    margin: 15px 0;
   }
 }

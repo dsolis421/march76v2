@@ -90,7 +90,7 @@ $(document).on('ready', function() {
     $("#clear").click(function() {
         $(".position").empty();
         $("#announce-winner").empty();
-        $playerTurn = 'x';
+        $playerTurn = 'X';
         $gameReady = true;
     })
 });

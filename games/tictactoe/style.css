@@ -1,5 +1,6 @@
 body {
   font-family: 'Trirong', sans-serif;
+  text-align: center;
 }
 
 header h1 {
@@ -14,6 +15,12 @@ div[data-cell] {
   border: 1px solid #808080;
   font-size: 55px;
   text-align: center;
+}
+
+#game-board {
+  height: 310px;
+  width: 310px;
+  margin: 0 auto;
 }
 
 .row {

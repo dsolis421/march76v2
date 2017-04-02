@@ -74,6 +74,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  margin: 20px 0;
 }
 .available {
   background-color: rgba(68, 102, 0, 1);
@@ -187,6 +188,30 @@ input {
     height: 0;
   }
 }
+@media screen and (min-width: 368px) and (max-width: 767px) {
+  #intro, #donate, #bizsupport, #foster {
+    padding: 5%;
+  }
+  #adoption, #dogs, #donate, #donate > div {
+    width: 100%;
+  }
+  #bizsupport {
+    height: auto;
+  }
+
+  #bizsupport > div > div {
+    margin: 10px auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1026px) {
+  .available {
+    width: 90%;
+  }
+  #dogs {
+    padding-left: 5%;
+    margin: 15px 0;
+  }
+}
 @media screen and (min-width: 1200px) and (max-width: 1411px) {
   #adoption {
     height: 1150px;
@@ -197,6 +222,7 @@ input {
   }
   #dogs {
     padding-left: 5%;
+    margin: 20px 0;
   }
 }
 @media screen and (min-width: 1027px) and (max-width: 1199px) {
@@ -209,13 +235,6 @@ input {
   }
   #dogs {
     padding-left: 3%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1026px) {
-  .available {
-    width: 290px;
-  }
-  #dogs {
-    padding-left: 5%;
+    margin: 20px 0;
   }
 }

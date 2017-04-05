@@ -30,7 +30,6 @@ a, a:hover, a:visited, a:focus {
   color: white;
   background: linear-gradient(-180deg, rgb(0, 153, 51), rgb(0, 153, 255));
   font-family: 'Archivo Black', sans-serif;
-  overflow: hidden;
 }
 #name-header h1 {
   font-size: 150px;
@@ -46,59 +45,61 @@ a, a:hover, a:visited, a:focus {
   display: block;
   margin-top: 90px;
 }
-#name-header svg {
+#name-header > div:first-of-type {
   position: absolute;
-  margin-top: 225px;
-  height: 120px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  width: 150%;
+  height: 275px;
+  top: 530px;
+  left: -100px;
+  background: rgba(255, 255, 255, .5);
+  transform: rotate(8deg);
 }
-#name-header .svg-light:first-of-type {
-  fill: rgba(255, 255, 255, .2);
-  cx: 110%;
-  cy: 90;
-  rx: 80%;
-  ry: 60%;
+#name-header > div:nth-of-type(2) {
+  position: absolute;
+  width: 150%;
+  height: 300px;
+  top: 490px;
+  right: -100px;
+  background: rgba(255, 255, 255, .2);
+  transform: rotate(-5deg);
 }
-#name-header .svg-light:nth-of-type(2) {
-  fill: rgba(255, 255, 255, .5);
-  cx: 10%;
-  cy: 95;
-  rx: 70%;
-  ry: 50%;
-}
-#name-header .svg-light:last-of-type {
-  fill: rgba(255, 255, 255, 1);
-  cx: 50%;
-  cy: 180;
-  rx: 60%;
-  ry: 95%;
-}
-#bio-bowl {
+#name-header > div:last-of-type {
+  position: absolute;
   color: rgb(53, 53, 53);
-  text-align: left;
-  height: 200px;
+  text-align: center;
+  bottom: -225px;
+  width: calc(100% - 100px);
+  height: 250px;
+  margin: 0 auto;
 }
-#bio-bowl > div {
-  width: 430px;
+#name-header > div > div {
+  position: relative;
+  width: 450px;
   height: 100%;
   margin: 0 auto;
 }
-#bio-bowl p {
+#name-header > div > div p {
   font-size: 27px;
+  margin-left: 65px;
 }
-#bio-bowl i {
+#name-header > div > div i {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: auto;
   height: 100%;
+  margin: 0 auto;
 }
 #work-scroll {
   position: absolute;
   top: 100px;
   left: 0;
 }
-#port-bowl {
+#site-space{
   background: linear-gradient(-180deg, rgb(0, 153, 255), rgb(0, 153, 51));
+  padding-top: 110px;
+}
+#port-bowl {
   position: relative;
   height: 1000px;
   width: 100%;
@@ -107,34 +108,6 @@ a, a:hover, a:visited, a:focus {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-}
-#port-bowl svg {
-  position: absolute;
-  height: 120px;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-#port-bowl .svg-light:first-of-type {
-  fill: rgba(255, 255, 255, .2);
-  cx: 110%;
-  cy: 30;
-  rx: 80%;
-  ry: 60%;
-}
-#port-bowl .svg-light:nth-of-type(2) {
-  fill: rgba(255, 255, 255, .5);
-  cx: 10%;
-  cy: 25;
-  rx: 70%;
-  ry: 50%;
-}
-#port-bowl .svg-light:last-of-type {
-  fill: rgba(255, 255, 255, 1);
-  cx: 50%;
-  cy: -60;
-  rx: 60%;
-  ry: 95%;
 }
 #port-bowl > div {
   margin: 30px auto 0 auto;
@@ -199,6 +172,16 @@ footer h4 {
   #name-header h1 {
     font-size: 90px;
   }
+  #name-header > div:last-of-type {
+    bottom: -250px;
+    width: calc(100% - 10px);
+  }
+  #name-header > div > div {
+    width: 100%;
+  }
+  #name-header > div > div p {
+    font-size: 25px;
+  }
   #port-bowl {
     height: 2470px;
   }
@@ -214,10 +197,10 @@ footer h4 {
     background-color: rgba(255, 255, 255, .5);
     font-size: 18px;
   }
-  #bio-bowl p {
-    font-size: 20px;
+  #name-header > div:last-of-type {
+    width: calc(100% - 10px);
   }
-  #bio-bowl > div, #port-bowl > div {
+  #port-bowl > div {
     padding: 0;
     width: 98%;
   }

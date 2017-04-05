@@ -21,6 +21,9 @@ a, a:hover, a:visited, a:focus {
   border: none;
   display: none;
 }
+nav span {
+  color: rgb(53, 53, 53);
+}
 #name-header {
   position: relative;
   width: 100%;
@@ -67,7 +70,7 @@ a, a:hover, a:visited, a:focus {
   position: absolute;
   color: rgb(53, 53, 53);
   text-align: center;
-  bottom: -225px;
+  bottom: -240px;
   width: calc(100% - 100px);
   height: 250px;
   margin: 0 auto;
@@ -92,7 +95,7 @@ a, a:hover, a:visited, a:focus {
 }
 #work-scroll {
   position: absolute;
-  top: 100px;
+  top: 150px;
   left: 0;
 }
 #site-space{
@@ -122,6 +125,9 @@ a, a:hover, a:visited, a:focus {
   font-size: 30px;
   margin: 60px auto;
 }
+.h4-underline {
+  text-decoration: underline;
+}
 #port-bowl > div > div {
   margin: 5px auto;
   height: 130px;
@@ -137,6 +143,9 @@ a, a:hover, a:visited, a:focus {
 }
 #port-bowl h2, .icon-contr {
   line-height: 130px;
+}
+#port-bowl p {
+  font-size: 18px;
 }
 footer {
   padding: 20px 0;
@@ -173,7 +182,7 @@ footer h4 {
     font-size: 90px;
   }
   #name-header > div:last-of-type {
-    bottom: -250px;
+    bottom: -280px;
     width: calc(100% - 10px);
   }
   #name-header > div > div {

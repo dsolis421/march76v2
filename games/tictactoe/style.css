@@ -3,7 +3,7 @@ body {
   background-image: url("../img/woodbackdrop.jpg");
   background-position: left;
   background-size: cover;
-  font-family: 'Eagle Lake', cursive;
+  font-family: 'Rock Salt', cursive;
 }
 
 header h1 {
@@ -19,7 +19,8 @@ div[data-cell] {
   font-size: 55px;
   text-align: center;
   color: rgba(255, 255, 255, .8);
-  font-family: 'Homemade Apple',cursive;
+  font-family: 'Rock Salt',cursive;
+  line-height: 100px;
 }
 
 div[data-cell="1"], div[data-cell="4"], div[data-cell="7"] {
@@ -54,13 +55,16 @@ div[data-cell="1"], div[data-cell="4"], div[data-cell="7"] {
   height: 45px;
   color: rgba(0, 0, 0, .7);
   border: none;
-  font-size: 28px;
+  font-size: 20px;
   background: rgba(255, 255, 255, .8);
   cursor: pointer;
-  font-family: 'Eagle Lake', cursive;
+  font-family: 'Rock Salt', cursive;
 }
-@media screen and (max-width: 389px) {
+@media screen and (max-width: 412px) {
   header h1 {
     font-size: 45px;
+  }
+  #announce-winner {
+    font-size: 30px;
   }
 }

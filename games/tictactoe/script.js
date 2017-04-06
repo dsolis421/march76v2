@@ -81,7 +81,7 @@ $(document).on('ready', function() {
                 $playerTurn = ($playerTurn === 'X') ? 'O' : 'X';
                 return;
             }
-            $("#announce-winner").text("Invalid move.");
+            $("#announce-winner").text("Invalid Move");
             return;
         }
         return;

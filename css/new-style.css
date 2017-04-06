@@ -167,38 +167,6 @@ footer h4 {
   font-size: 20px;
   margin: 10px 0;
 }
-@media screen and (min-width: 877px) and (max-width: 1306px) {
-  #name-header h1 {
-    font-size: 100px;
-  }
-  #name-header i {
-    margin-top: 50px;
-  }
-  #port-bowl {
-    height: 1700px;
-  }
-}
-@media screen and (max-width: 876px) {
-  #name-header {
-    padding: 5px;
-  }
-  #name-header h1 {
-    font-size: 90px;
-  }
-  #name-header > div:last-of-type {
-    bottom: -280px;
-    width: calc(100% - 10px);
-  }
-  #name-header > div > div {
-    width: 100%;
-  }
-  #name-header > div > div p {
-    font-size: 25px;
-  }
-  #port-bowl {
-    height: 2470px;
-  }
-}
 @media screen and (max-width: 412px) {
   #name-header {
     padding: 5px;
@@ -223,7 +191,41 @@ footer h4 {
   #port-bowl h2 {
     font-size: 18px;
   }
+}
+@media screen and (max-width: 767px) {
   footer {
     height: 900px;
+  }
+}
+@media screen and (max-width: 876px) {
+  #name-header {
+    padding: 5px;
+  }
+  #name-header h1 {
+    font-size: 90px;
+  }
+  #name-header > div:last-of-type {
+    bottom: -280px;
+    width: calc(100% - 10px);
+  }
+  #name-header > div > div {
+    width: 100%;
+  }
+  #name-header > div > div p {
+    font-size: 25px;
+  }
+  #port-bowl {
+    height: 2470px;
+  }
+}
+@media screen and (min-width: 877px) and (max-width: 1306px) {
+  #name-header h1 {
+    font-size: 100px;
+  }
+  #name-header i {
+    margin-top: 50px;
+  }
+  #port-bowl {
+    height: 1700px;
   }
 }

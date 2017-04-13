@@ -9,7 +9,7 @@ function loopBios() {
       $('#bio-carousel').html($bios[$bioindex]);
     });
     $('#bio-carousel').fadeIn("slow","swing");
-    if ($bioindex === 4) {
+    if ($bioindex === 5) {
       $bioindex = 0;
     } else {
     $bioindex++;
@@ -33,5 +33,23 @@ loopBios();
         $('#mar-nav').fadeOut(500,"swing");
     }
   })
+
+  $('#feedback-submit').submit(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLScphQoYfir7fbGiMzRQqrgdyVQDNWxju4dLMc1Iwig5tAe02A/formResponse",
+            data: $(this).serialize(),
+            type: "POST",
+            dataType: "xml",
+            success: function(data) {
+                console.log('Submission successful');
+            },
+            error: function(xhr, status, error) {
+                console.log('Submission failed: ' + error);
+            }
+        });
+        $('#feedback-lead').html("Thank You!");
+        $('input:first-of-type, textarea').val("")
+    });
 
 })

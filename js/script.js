@@ -32,7 +32,7 @@ loopBios();
     } else if ($scroll == 0) {
         $('#mar-nav').fadeOut(500,"swing");
     }
-  })
+  });
 
   $('#feedback-submit').submit(function(event) {
         event.preventDefault();
@@ -51,5 +51,10 @@ loopBios();
         $('#feedback-lead').html("Thank You!");
         $('input:first-of-type, textarea').val("")
     });
+
+  $('#marnav-navbar-collapse').click(function(){
+    $(this).removeClass("in");
+    $(this).attr("aria-expanded",false);
+  });
 
 })

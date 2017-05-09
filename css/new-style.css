@@ -42,7 +42,7 @@ a, a:hover, a:visited, a:focus {
 }
 #name-header span {
   color: rgb(53, 53, 53);
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, 1);
   padding: 2px 20px;
   font-size: 35px;
 }
@@ -202,7 +202,7 @@ footer input:last-of-type {
     padding: 5px;
   }
   #name-header h1 {
-    font-size: 90px;
+    font-size: 88px;
   }
   #name-header p {
     font-size: 25px;

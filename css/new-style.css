@@ -39,6 +39,7 @@ a, a:hover, a:visited, a:focus {
 }
 #name-header h1 {
   font-size: 150px;
+  margin-bottom: 15px;
 }
 #name-header span {
   color: rgb(53, 53, 53);
@@ -51,27 +52,27 @@ a, a:hover, a:visited, a:focus {
 }
 #name-header > div:first-of-type i {
   display: block;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 #name-header > div {
   height: auto;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .3);
 }
 #name-header > div:last-of-type {
   color: rgb(53, 53, 53);
   text-align: center;
   padding: 10px;
   width: calc(100% - 100px);
-  margin: 20px auto;
+  margin: 40px auto 0px auto;
 }
 #name-header > div p {
-  font-size: 27px;
+  font-size: 35px;
   margin-left: 65px;
 }
 #name-header > div i {
   width: auto;
   height: 100%;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 #site-space{
   background: linear-gradient(-180deg, rgb(0, 153, 255), rgb(230, 92, 0));
@@ -91,7 +92,7 @@ a, a:hover, a:visited, a:focus {
   padding: 10px;
   text-align: center;
   color: rgb(53, 53, 53);
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .3);
   height: 700px;
   width: 430px;
 }
@@ -168,12 +169,6 @@ footer input:last-of-type {
   visibility: hidden;
 }
 @media screen and (max-width: 412px) {
-  #name-header {
-    padding: 5px;
-  }
-  #name-header h1 {
-    font-size: 70px;
-  }
   #name-header span {
     background-color: rgba(255, 255, 255, .5);
     font-size: 18px;
@@ -202,10 +197,10 @@ footer input:last-of-type {
     padding: 5px;
   }
   #name-header h1 {
-    font-size: 88px;
+    font-size: 85px;
   }
-  #name-header p {
-    font-size: 25px;
+  #name-header > div p {
+    font-size: 20px;
   }
   #port-bowl {
     height: auto;

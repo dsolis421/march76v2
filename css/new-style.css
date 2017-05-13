@@ -122,6 +122,19 @@ a, a:hover, a:visited, a:focus {
 #port-bowl p {
   font-size: 18px;
 }
+#media-space {
+  padding: 80px;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(-180deg, rgb(230, 92, 0), rgb(230, 0, 115));
+}
+#twitter-bowl {
+  width: 800px;
+  height: auto;
+  padding: 10px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .3);
+}
 footer {
   padding: 20px 0;
   height: 300px;
@@ -197,13 +210,19 @@ footer input:last-of-type {
     padding: 5px;
   }
   #name-header h1 {
-    font-size: 85px;
+    font-size: 80px;
   }
   #name-header > div p {
     font-size: 20px;
   }
   #port-bowl {
     height: auto;
+  }
+  #media-space {
+    padding: 2%;
+  }
+  #twitter-bowl {
+    width: 100%;
   }
 }
 @media screen and (min-width: 877px) and (max-width: 1306px) {

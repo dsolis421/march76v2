@@ -52,7 +52,7 @@ loopBios();
         $('input:first-of-type, textarea').val("")
     });
 
-  $('#marnav-navbar-collapse').click(function(){
+  $('#marnav-navbar-collapse, #logo').click(function(){
     $(this).removeClass("in");
     $(this).attr("aria-expanded",false);
   });

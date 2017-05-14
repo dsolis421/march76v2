@@ -33,13 +33,51 @@ a, a:hover, a:visited, a:focus {
   height: auto;
   padding: 50px;
   text-align: center;
-  color: rgb(53, 53, 53);
-  background: linear-gradient(-180deg, rgb(0, 153, 51), rgb(0, 153, 255));
+  color: white;
+  background: rgb(53, 53, 53);
   font-family: 'Archivo Black', sans-serif;
 }
-#name-header h1 {
+#name-header > div:first-of-type {
+  padding-bottom: 20px;
+}
+#name-header > div:first-of-type > div:first-of-type {
+  position: relative;
+  float: left;
+  width: 40vw;
+  height: 100%;
+}
+#name-header > div:first-of-type > div:nth-of-type(2) {
+  float: left;
+  width: 60vw;
+  height: auto;
+}
+#name-header > div {
+  height: auto;
+}
+.danny {
   font-size: 150px;
-  margin-bottom: 15px;
+}
+.three, .seven, .six {
+  font-size: 200px;
+}
+.three {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  transform: rotate(-90deg);
+}
+.seven {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: rgb(136, 204, 0);
+  transform: rotate(-45deg);
+}
+.six {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  color: rgb(0, 119, 179);
 }
 #name-header span {
   color: rgb(53, 53, 53);
@@ -47,35 +85,34 @@ a, a:hover, a:visited, a:focus {
   padding: 2px 20px;
   font-size: 35px;
 }
-#name-header > div:first-of-type {
-  padding-bottom: 20px;
-}
-#name-header > div:first-of-type i {
-  display: block;
-  margin-top: 30px;
-}
-#name-header > div {
-  height: auto;
-  background: rgba(255, 255, 255, .8);
-}
 #name-header > div:last-of-type {
   color: rgb(53, 53, 53);
   text-align: center;
   padding: 10px;
   width: calc(100% - 100px);
   margin: 40px auto 0px auto;
+  background: rgba(255, 255, 255, .8);
 }
 #name-header > div p {
   font-size: 35px;
   margin-left: 65px;
 }
-#name-header > div i {
-  width: auto;
-  height: 100%;
-  margin: 5px auto;
+#name-menu {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin-top: 50px;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#name-menu > div {
+  width: 350px;
+  height: 80px;
 }
 #site-space{
-  background: linear-gradient(-180deg, rgb(0, 153, 255), rgb(230, 92, 0));
+  background: linear-gradient(-180deg, rgb(0, 153, 51), rgb(0, 153, 255));
 }
 #port-bowl {
   position: relative;

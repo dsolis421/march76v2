@@ -2,6 +2,24 @@ $(document).ready(function(){
 
 var $bios = ['HUSBAND','GAMER','DOG LOVER','PROJECT MANAGER','DATA ANALYST','WEB DEVELOPER'];
 var $bioindex = 1;
+var $quotes = [
+  {
+    quote: "I am always doing that which I cannot do, in order that I may learn how to do it.",
+    author: " - Pablo Picasso"
+  },
+  {
+    quote: "A dog is the only thing on earth that loves you more than you love yourself.",
+    author: " - Josh Billings"
+  },
+  {
+    quote: "Happiness lies in the joy of achievement and the thrill of creative effort.",
+    author: " - Franklin D. Roosevelt"
+  },
+  {
+    quote: "Quality is never an accident. It is always the result of intelligent effort.",
+    author: " - John Ruskin"
+  }
+]
 
 function loopBios() {
   setInterval(function(){
@@ -17,7 +35,14 @@ function loopBios() {
   },5000)
 }
 
+function pickQuote() {
+  var i = Math.floor(Math.random() * 4);
+  var $myquote = $quotes[i];
+  $('#myquote').html($myquote.quote + $myquote.author);
+}
+
 loopBios();
+pickQuote();
 
   var $scroll = $(document).scrollTop();
 
@@ -53,8 +78,8 @@ loopBios();
     });
 
   $('#marnav-navbar-collapse, #logo').click(function(){
-    $(this).removeClass("in");
-    $(this).attr("aria-expanded",false);
+    $('#marnav-navbar-collapse').removeClass("in");
+    $('#marnav-navbar-collapse').attr("aria-expanded",false);
   });
 
 })

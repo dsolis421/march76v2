@@ -41,7 +41,7 @@ function pickQuote() {
   $('#myquote').html($myquote.quote + $myquote.author);
 }
 
-loopBios();
+/*loopBios();*/
 pickQuote();
 
   var $scroll = $(document).scrollTop();

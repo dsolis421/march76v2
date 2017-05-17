@@ -1,7 +1,18 @@
+var $ico = ["block3.ico","block7.ico","block6.ico"];
+
+function pickICO() {
+  var x = Math.floor(Math.random() * 3);
+  var $icon = $ico[x];
+  var $link = window.document.getElementsByTagName('link[href="shortcut icon"]');
+  $($link).attr("href",$icon);
+};
+
+pickICO();
+
 $(document).ready(function(){
 
-var $bios = ['HUSBAND','GAMER','DOG LOVER','PROJECT MANAGER','DATA ANALYST','WEB DEVELOPER'];
-var $bioindex = 1;
+/*var $bios = ['HUSBAND','GAMER','DOG LOVER','PROJECT MANAGER','DATA ANALYST','WEB DEVELOPER'];
+var $bioindex = 1;*/
 var $quotes = [
   {
     quote: "I am always doing that which I cannot do, in order that I may learn how to do it.",
@@ -19,9 +30,9 @@ var $quotes = [
     quote: "Quality is never an accident. It is always the result of intelligent effort.",
     author: " - John Ruskin"
   }
-]
+];
 
-function loopBios() {
+/*function loopBios() {
   setInterval(function(){
     $('#bio-carousel').fadeOut("slow","swing",function(){
       $('#bio-carousel').html($bios[$bioindex]);
@@ -33,13 +44,15 @@ function loopBios() {
     $bioindex++;
     }
   },5000)
-}
+}*/
 
 function pickQuote() {
   var i = Math.floor(Math.random() * 4);
   var $myquote = $quotes[i];
   $('#myquote').html($myquote.quote + $myquote.author);
 }
+
+
 
 /*loopBios();*/
 pickQuote();

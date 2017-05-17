@@ -1,4 +1,4 @@
-/*grey =  rgb(96, 96, 96);
+/*grey   rgb(96, 96, 96);
 blue      rgb(0, 119, 179);
 dark blue  rgb(0, 85, 128);
 orange     rgb(230, 92, 0);
@@ -15,6 +15,16 @@ h1, h2, h3, h4, h5, .row {
 a, a:hover, a:visited, a:focus {
   color: inherit;
   text-decoration: none;
+}
+.three {
+  color: rgb(136, 204, 0);
+}
+.seven {
+  color: rgb(0, 119, 179);
+  margin: 0 -5px;
+}
+.six {
+  color: rgb(230, 92, 0);
 }
 #mar-nav {
   display: none;
@@ -40,60 +50,64 @@ a, a:hover, a:visited, a:focus {
 #name-header > div:first-of-type {
   width: 100%;
   height: 120px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 #name-header > div {
   height: auto;
 }
 .danny {
+  margin: 0;
   font-size: 150px;
-}
-.three, .seven, .six {
-  display: inline-block;
-}
-.three {
-  color: rgb(0, 153, 51);
-  transform: rotate(0);
-}
-.seven {
-  color: rgb(0, 119, 179);
-  transform: rotate(-45deg);
-}
-.six {
-  color: rgb(230, 92, 0);
-  transform: rotate(-90deg);
+  text-shadow: 3px 3px rgb(53, 53, 53);
 }
 #name-menu {
   width: 100%;
   height: auto;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 80px;
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 #name-menu > div {
-  width: 350px;
+  position: relative;
+  width: 300px;
   height: 80px;
   line-height: 80px;
   font-size: 30px;
 }
-#name-menu > div:first-of-type:hover {
-  cursor: pointer;
-  background: radial-gradient(rgb(0, 153, 51), rgb(53, 53, 53), rgb(53, 53, 53));
+.menu-bar {
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 150px;
+  margin: 0 auto;
+  transition: 400ms ease-out;
 }
-#name-menu > div:nth-of-type(2):hover {
-  cursor: pointer;
-  background: radial-gradient(rgb(0, 119, 179), rgb(53, 53, 53), rgb(53, 53, 53));
+#name-menu > div:first-of-type .menu-bar {
+  background: rgb(136, 204, 0);
 }
-#name-menu > div:last-of-type:hover {
+#name-menu > div:nth-of-type(2) .menu-bar {
+  background: rgb(0, 119, 179);
+}
+#name-menu > div:last-of-type .menu-bar {
+  background: rgb(230, 92, 0);
+}
+#name-menu > div:hover .menu-bar {
   cursor: pointer;
-  background: radial-gradient(rgb(230, 92, 0), rgb(53, 53, 53), rgb(53, 53, 53));
+  width: 100%;
+  left: 0;
+  transition: 400ms ease-out;
 }
 #quote {
   width: 100%;
   height: auto;
-  background: rgb(0, 153, 51);
+  background: rgb(136, 204, 0);
   border-bottom: 25px solid rgb(53, 53, 53);
   padding: 20px 0;
 }
@@ -226,6 +240,11 @@ footer input:last-of-type {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 636px) {
+  #name-menu {
+    margin-top: 20px;
+  }
+}
 @media screen and (max-width: 767px) {
   footer {
     height: auto;
@@ -238,10 +257,10 @@ footer input:last-of-type {
   #name-header {
     padding: 5px;
   }
-  #name-header h1 {
+  .danny {
     font-size: 80px;
   }
-  #name-header > div p {
+  #myquote {
     font-size: 20px;
   }
   #port-bowl {
@@ -255,7 +274,7 @@ footer input:last-of-type {
   }
 }
 @media screen and (min-width: 877px) and (max-width: 1306px) {
-  #name-header h1 {
+  .danny {
     font-size: 100px;
   }
 }

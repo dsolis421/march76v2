@@ -54,6 +54,7 @@ a, a:hover, a:visited, a:focus {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  overflow-x: hidden;
 }
 #name-header > div {
   height: auto;

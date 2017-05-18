@@ -82,7 +82,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
-#name-menu > div {
+#name-menu a > div {
   position: relative;
   width: 300px;
   height: 80px;
@@ -101,16 +101,16 @@ section {
   margin: 0 auto;
   transition: 200ms ease-out;
 }
-#name-menu > div:first-of-type .menu-bar {
+#name-menu > a:first-of-type > div .menu-bar {
   background: rgb(136, 204, 0);
 }
-#name-menu > div:nth-of-type(2) .menu-bar {
+#name-menu > a:nth-of-type(2) > div .menu-bar {
   background: rgb(0, 119, 179);
 }
-#name-menu > div:last-of-type .menu-bar {
+#name-menu > a:last-of-type > div .menu-bar {
   background: rgb(230, 92, 0);
 }
-#name-menu > div:hover .menu-bar {
+#name-menu > a > div:hover .menu-bar {
   cursor: pointer;
   width: 100%;
   left: 0;

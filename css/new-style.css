@@ -5,6 +5,14 @@ orange     rgb(230, 92, 0);
 green      rgb(136, 204, 0);
 dark green   rgb(85, 128, 0);
 */
+:root {
+  --grey: rgb(53, 53, 53);
+  --blue: rgb(0, 119, 179);
+  --darkblue: rgb(0, 85, 128);
+  --orange: rgb(230, 92, 0);
+  --green: rgb(136, 204, 0);
+  --darkgreen: rgb(85, 128, 0);
+}
 body {
   color: white;
 }
@@ -17,185 +25,85 @@ a, a:hover, a:visited, a:focus {
   text-decoration: none;
 }
 section {
-  overflow-x: hidden;
+  width: 100%;
+  height: auto;
 }
-.three {
-  color: rgb(136, 204, 0);
-  font-size: 35px;
-  font-weight: bold;
+.danny {
+  font-size: 150px;
+  text-align: center;
 }
-.seven {
-  color: rgb(0, 119, 179);
-  margin: 0 -10px;
-  font-size: 35px;
-  font-weight: bold;
-}
-.six {
-  color: rgb(230, 92, 0);
-  font-size: 35px;
-  font-weight: bold;
+.danny, .site h2 {
+  font-family: 'Raleway', serif;
 }
 #mar-nav {
   display: none;
 }
-#mar-nav, #logo, #marnav-navbar-collapse .mar-menu {
+#name-header, #site-space {
+  padding: 30px 15px;
   background-color: rgb(53, 53, 53);
-  color: white;
-  border: none;
-  /*display: none;*/
-}
-#marnav-navbar-collapse {
-  transition: 500ms ease;
-}
-#name-header {
-  width: 100%;
-  height: auto;
-  padding-bottom: 20px;
-  text-align: center;
-  color: white;
-  background: rgb(53, 53, 53);
-  font-family: 'Archivo Black', sans-serif;
-}
-#name-header > div:first-of-type {
-  width: 100%;
-  height: 120px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-#name-header > div {
-  height: auto;
-}
-.danny {
-  margin: 0;
-  font-size: 150px;
-  text-shadow: 3px 3px rgb(53, 53, 53);
 }
 #name-menu {
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  margin-top: 80px;
-  display: -ms-flexbox;
+  margin-top: 50px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 #name-menu a > div {
-  position: relative;
   width: 300px;
-  height: 80px;
-  line-height: 80px;
-  font-size: 30px;
-}
-#name-menu > div:hover {
-  cursor: pointer;
-}
-.menu-bar {
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  bottom: 0;
-  left: 150px;
+  height: 100px;
   margin: 0 auto;
-  transition: 200ms ease-out;
-}
-#name-menu > a:first-of-type > div .menu-bar {
-  background: rgb(136, 204, 0);
-}
-#name-menu > a:nth-of-type(2) > div .menu-bar {
-  background: rgb(0, 119, 179);
-}
-#name-menu > a:last-of-type > div .menu-bar {
-  background: rgb(230, 92, 0);
-}
-#name-menu > a > div:hover .menu-bar {
-  cursor: pointer;
-  width: 100%;
-  left: 0;
-  transition: 200ms ease-out;
+  text-align: center;
+  font-size: 30px;
+  line-height: 100px;
 }
 #quote {
-  width: 100%;
-  height: auto;
-  background: rgb(136, 204, 0);
-  border-bottom: 25px solid rgb(53, 53, 53);
-  padding: 20px 0;
+  color: rgb(53, 53, 53);
+}
+#quote i {
+  height: 100%;
 }
 #quote > div {
-  color: rgb(53, 53, 53);
-  text-align: center;
-  padding: 10px;
-  width: calc(100% - 100px);
-  margin: 0 auto;
-  background: rgba(255, 255, 255, .8);
-}
-#quote > div p {
-  font-size: 35px;
-  margin-left: 65px;
-}
-#site-space{
-  background: rgb(0, 119, 179);
-  border-bottom: 25px solid rgb(53, 53, 53);
-}
-#port-bowl {
-  position: relative;
+  width: 70%;
   height: auto;
-  width: 100%;
-  padding: 10px;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-#port-bowl > div {
-  margin: 30px auto 0 auto;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 10px 0;
+  font-family: 'Raleway', serif;
   text-align: center;
-  color: rgb(53, 53, 53);
-  background-color: rgba(255, 255, 255, .8);
-  height: 700px;
-  width: 430px;
 }
-#port-bowl > div h4 {
-  font-size: 30px;
-  margin: 60px auto;
+#myquote {
+  font-size: 40px;
+  margin: 0;
 }
-.h4-underline {
-  text-decoration: underline;
+.site:nth-of-type(odd) {
+  text-align: right;
 }
-#port-bowl > div > div {
-  margin: 5px auto;
-  height: 130px;
-  width: 380px;
+.site:nth-of-type(even) {
+  text-align: left;
 }
-#port-bowl .icon-contr {
-  float: left;
-  height: 130px;
-  width: 130px;
+.site {
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
+  border-bottom: 1px solid white;
 }
-#port-bowl h2 {
-  font-size: 25px;
+.site:nth-of-type(odd):hover {
+  background: linear-gradient(90deg, rgba(136, 204, 0, 1), rgba(136, 204, 0, 0))
 }
-#port-bowl h2, .icon-contr {
-  line-height: 130px;
-}
-#port-bowl p {
-  font-size: 18px;
+.site:nth-of-type(even):hover {
+  background: linear-gradient(-90deg, rgba(136, 204, 0, 1), rgba(136, 204, 0, 0))
 }
 #media-space {
-  padding: 20px;
   width: 100%;
   height: auto;
-  background: rgb(230, 92, 0);
-}
-#twitter-bowl {
-  width: 800px;
-  height: auto;
   padding: 10px;
+  background: var(--orange);
+}
+#media-space > div {
+  width: 70%;
+  height: auto;
   margin: 0 auto;
-  background: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .5);
 }
 footer {
   padding: 20px 0;
@@ -235,58 +143,4 @@ footer input {
 footer input:last-of-type {
   background: rgba(255, 255, 255, .5);
   width: 150px;
-}
-@media screen and (max-width: 412px) {
-  #name-header span {
-    background-color: rgba(255, 255, 255, .5);
-    font-size: 18px;
-  }
-  #port-bowl > div {
-    padding: 0;
-    width: 98%;
-  }
-  #port-bowl > div > div {
-    width: 90%;
-  }
-  #port-bowl h2 {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 636px) {
-  #name-menu {
-    margin-top: 20px;
-  }
-}
-@media screen and (max-width: 767px) {
-  footer {
-    height: auto;
-  }
-  footer .col-sm-4:nth-of-type(2) {
-    margin: 40px 0;
-  }
-}
-@media screen and (max-width: 876px) {
-  #name-header {
-    padding: 5px;
-  }
-  .danny {
-    font-size: 80px;
-  }
-  #quote > div p {
-    font-size: 20px;
-  }
-  #port-bowl {
-    height: auto;
-  }
-  #media-space {
-    padding: 2%;
-  }
-  #twitter-bowl {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 877px) and (max-width: 1306px) {
-  .danny {
-    font-size: 100px;
-  }
 }

@@ -33,38 +33,26 @@ function getSheltersZip(zip) {
   $.getJSON($petfinderAPI + 'shelter.find?location=' + zip + '&format=json&key=' + $devkey + '&callback=?')
     .done(function(petApiData){
       console.log(petApiData);
-      if(petApiData.petfinder.hasOwnProperty('shelters')) {
-        $('#searchstatus').fadeOut("slow","swing", function() {
-          $('searchstatus').empty();
+      $('#searchstatus').fadeOut("slow","swing", function() {
+        $('searchstatus').empty();
+      });
+      $('#shelters').fadeOut("slow","swing", function() {
+        $('#shelters').empty();
+        var shelters = petApiData.petfinder.shelters.shelter;
+        for (i in shelters) {
+          var listing = '<div class="shelter" shelterid=' + shelters[i].id.$t + '><h4>' + shelters[i].name.$t + '</h4><div>See Family<div></div>';
+          $('#shelters').append(listing);
+        };
+        $('#shelters').fadeIn("slow","swing");
+        $('#shelters').on("click", ".shelter", function(){
+          getShelter($(this).attr('shelterid'));
         });
-        $('#shelters').fadeOut("slow","swing", function() {
-          $('#shelters').empty();
-          var shelters = petApiData.petfinder.shelters.shelter;
-          for (i in shelters) {
-            var listing = '<div class="shelter" shelterid=' + shelters[i].id.$t + '><h4>' + shelters[i].name.$t + '</h4><div>See Family</div></div>';
-            $('#shelters').append(listing);
-          };
-          $('#shelters').fadeIn("slow","swing");
-          $('#shelters').on("click", ".shelter", function(){
-            getShelter($(this).attr('shelterid'));
-            $('html, body').animate({
-              scrollTop: $('#adoption').offset().top - 35
-            }, 500);
-          });
-        });
-      } else {
-        $('#searchstatus').fadeOut("slow","swing", function() {
-          $('searchstatus').empty();
-        });
-        $('#searchstatus').html('<h3>Hmm...</h3>');
-        $('#searchstatus').fadeIn("slow","swing");
-      }
+      });
     })
     .error(function(err){
       console.log('Get shelters by zip error! ' + err);
     });
 }
-
 
 $(document).ready(function() {
 
@@ -87,11 +75,7 @@ $(document).ready(function() {
     if($('#sheltersearch').val().length === 5) {
       getSheltersZip($('#sheltersearch').val());
     } else {
-      $('#searchstatus').fadeOut("slow","swing", function() {
-        $('searchstatus').empty();
-      });
-      $('#searchstatus').html('<h3>Oops!</h3>');
-      $('#searchstatus').fadeIn("slow","swing");
+      return;
     }
   });
 })

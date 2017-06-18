@@ -5,14 +5,6 @@ orange     rgb(230, 92, 0);
 green      rgb(136, 204, 0);
 dark green   rgb(85, 128, 0);
 */
-:root {
-  --grey: rgb(53, 53, 53);
-  --blue: rgb(0, 119, 179);
-  --darkblue: rgb(0, 85, 128);
-  --orange: rgb(230, 92, 0);
-  --green: rgb(136, 204, 0);
-  --darkgreen: rgb(85, 128, 0);
-}
 body {
   color: white;
 }
@@ -27,41 +19,59 @@ a, a:hover, a:visited, a:focus {
 section {
   width: 100%;
   height: auto;
-}
-.danny {
-  font-size: 150px;
-  text-align: center;
-}
-.danny, .site h2 {
-  font-family: 'Raleway', serif;
+  transition: all 1s;
 }
 #mar-nav {
   display: none;
+  font-weight: bold;
+  color: rgb(53, 53, 53);
+}
+#mar-nav a:hover {
+  color: rgb(136, 204, 0);
+}
+#name-header > div {
+  text-align: center;
+}
+.bio {
+  width: 780px;
+  margin: -20px auto 20px auto;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+.bio span {
+  display: inline-block;
+}
+.bio span:nth-of-type(1),
+.bio span:nth-of-type(2) {
+  opacity: .1;
+}
+.bio span:nth-of-type(3),
+.bio span:nth-of-type(4) {
+  opacity: .3;
+}
+.bio span:nth-of-type(5),
+.bio span:nth-of-type(6) {
+  opacity: .5;
+}
+.bio span:last-of-type {
+  color: rgb(136, 204, 0);
+}
+.danny {
+  font-size: 150px;
+}
+.danny, .site h2, #mar-nav {
+  font-family: 'Raleway', serif;
 }
 #name-header, #site-space {
   padding: 30px 15px;
   background-color: rgb(53, 53, 53);
-}
-#name-menu {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#name-menu a > div {
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 30px;
-  line-height: 100px;
 }
 #quote {
   color: rgb(53, 53, 53);
 }
 #quote i {
   height: 100%;
+  color: rgb(136, 204, 0);
 }
 #quote > div {
   width: 70%;
@@ -75,39 +85,107 @@ section {
   font-size: 40px;
   margin: 0;
 }
-.site:nth-of-type(odd) {
-  text-align: right;
-}
-.site:nth-of-type(even) {
-  text-align: left;
+#site-space {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .site {
-  width: 90%;
-  height: auto;
-  margin: 20px auto;
-  border-bottom: 1px solid white;
+  width: 300px;
+  height: 250px;
+  margin: 10px auto;
+  background-position: center;
+  transition: all .8s;
+  transition-timing-function: ease-out;
 }
-.site:nth-of-type(odd):hover {
-  background: linear-gradient(90deg, rgba(136, 204, 0, 1), rgba(136, 204, 0, 0))
+.site:nth-of-type(1) {
+  background-image: url('../img/toh_tnail.png');
 }
-.site:nth-of-type(even):hover {
-  background: linear-gradient(-90deg, rgba(136, 204, 0, 1), rgba(136, 204, 0, 0))
+.site:nth-of-type(2) {
+  background-image: url('../img/pet_tnail.png');
+}
+.site:nth-of-type(3) {
+  background-image: url('../img/brdgt_tnail.png');
+}
+.site:nth-of-type(4) {
+  background-image: url('../img/movie_tnail.png');
+}
+.site > a > div {
+  width: 300px;
+  height: 250px;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid white;
+  background: rgba(53, 53, 53, .2);
+  transition: all .8s;
+  transition-timing-function: ease-out;
+}
+.site p {
+  font-size: 18px;
+  visibility: hidden;
+}
+.site:hover {
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+}
+.site:hover > a > div {
+  width: 300px;
+  height: 300px;
+  text-align: right;
+  background: rgba(53, 53, 53, .6);
+  border: 1px solid rgb(136, 204, 0);
+}
+.site:hover h2 {
+  color: rgb(136, 204, 0);
+}
+.site a > div:hover p {
+  visibility: visible;
+}
+#site-space > div:last-of-type {
+  width: 50%;
+  height: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+}
+#site-space input, #site-space textarea {
+  margin: 10px auto;
+  border: none;
+  padding: 5px;
+  font-size: 18px;
+  color: rgb(53, 53, 53);
+  display: block;
+}
+#site-space input:not(:last-of-type), #site-space textarea {
+  width: 80%;
+}
+#site-space textarea {
+  height: 170px;
+}
+#site-space input {
+  height: 35px;
+}
+#site-space input:last-of-type {
+  background: rgb(136, 204, 0);
+  color: white;
+  width: 150px;
 }
 #media-space {
   width: 100%;
   height: auto;
   padding: 10px;
-  background: var(--orange);
 }
 #media-space > div {
   width: 70%;
   height: auto;
   margin: 0 auto;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(53, 53, 53, .5);
 }
 footer {
   padding: 20px 0;
-  height: 300px;
+  height: auto;
   background-color: rgb(53, 53, 53);
   text-align: center;
 }
@@ -120,27 +198,30 @@ footer a {
 footer h4 {
   font-size: 20px;
 }
-footer > div > div:nth-of-type(2) h4:first-of-type {
+footer > div > div:first-of-type h4:first-of-type {
   margin: 30px 0 10px 0;
 }
-footer input, footer textarea {
-  margin: 10px auto;
-  border: none;
-  padding: 5px;
-  font-size: 18px;
-  color: rgb(53, 53, 53);
-  display: block;
+@media screen and (max-width: 799px) {
+  .bio {
+    width: 280px;
+    margin: -10px auto 20px auto;
+  }
+  .danny {
+    font-size: 50px;
+  }
+  #myquote {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #site-space > div:last-of-type {
+    width: 95%;
+  }
+  #media-space > div {
+    width: 95%;
+  }
 }
-footer input:not(:last-of-type), footer textarea {
-  width: 80%;
-}
-footer textarea {
-  height: 120px;
-}
-footer input {
-  height: 35px;
-}
-footer input:last-of-type {
-  background: rgba(255, 255, 255, .5);
-  width: 150px;
+@media screen and (min-width: 800px) and (max-width: 945px) {
+  #site-space > div:last-of-type {
+    width: 95%;
+  }
 }

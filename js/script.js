@@ -14,33 +14,34 @@ $(window).load(function(){
 
 $(document).ready(function(){
 
-/*var $bios = ['HUSBAND','GAMER','DOG LOVER','PROJECT MANAGER','DATA ANALYST','WEB DEVELOPER'];
+/*var $bios = ['WebDeveloper','Husband','Gamer','DogLover','ProjectManager','DataAnalyst'];
 var $bioindex = 1;*/
+
 var $quotes = [
   {
     quote: "I am always doing that which I cannot do, in order that I may learn how to do it.",
-    author: " - Pablo Picasso"
+    author: " - PabloPicasso"
   },
   {
     quote: "A dog is the only thing on earth that loves you more than you love yourself.",
-    author: " - Josh Billings"
+    author: " - JoshBillings"
   },
   {
     quote: "Happiness lies in the joy of achievement and the thrill of creative effort.",
-    author: " - Franklin D. Roosevelt"
+    author: " - FranklinDRoosevelt"
   },
   {
     quote: "Quality is never an accident. It is always the result of intelligent effort.",
-    author: " - John Ruskin"
+    author: " - JohnRuskin"
   }
 ];
 
 /*function loopBios() {
   setInterval(function(){
-    $('#bio-carousel').fadeOut("slow","swing",function(){
+    $('#bio-carousel').fadeOut(1200,"swing",function(){
       $('#bio-carousel').html($bios[$bioindex]);
     });
-    $('#bio-carousel').fadeIn("slow","swing");
+    $('#bio-carousel').fadeIn(1200,"swing");
     if ($bioindex === 5) {
       $bioindex = 0;
     } else {
@@ -57,7 +58,7 @@ function pickQuote() {
 
 
 
-/*loopBios();*/
+//loopBios();
 pickQuote();
 
   var $scroll = $(document).scrollTop();
@@ -98,4 +99,4 @@ pickQuote();
     $('#marnav-navbar-collapse').attr("aria-expanded",false);
   });
 
-})
+});

@@ -1,4 +1,4 @@
-var $petfinderAPI = 'http://api.petfinder.com/';
+var $petfinderAPI = 'https://api.petfinder.com/';
 var $devkey = '3c73470956892905e562a55f0e113f50';
 
 function getShelter(id) {
@@ -52,11 +52,13 @@ function getSheltersZip(zip) {
             }, 500);
           });
         });
+        $('#searchstatus').html('<h3>Here\'s what we found...</h3>');
+        $('#searchstatus').fadeIn("slow","swing");
       } else {
         $('#searchstatus').fadeOut("slow","swing", function() {
           $('searchstatus').empty();
         });
-        $('#searchstatus').html('<h3>Hmm...</h3>');
+        $('#searchstatus').html('<h3>Hmm... We didn\'t find any shelters.  Please check the zip code and try again.</h3>');
         $('#searchstatus').fadeIn("slow","swing");
       }
     })
@@ -90,7 +92,7 @@ $(document).ready(function() {
       $('#searchstatus').fadeOut("slow","swing", function() {
         $('searchstatus').empty();
       });
-      $('#searchstatus').html('<h3>Oops!</h3>');
+      $('#searchstatus').html('<h3>Oops! That doesn\'t look like a valid zip code.</h3>');
       $('#searchstatus').fadeIn("slow","swing");
     }
   });

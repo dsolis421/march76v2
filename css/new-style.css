@@ -198,6 +198,10 @@ footer a {
 footer h4 {
   font-size: 20px;
 }
+footer p {
+  font-size: 18px;
+  color: rgb(136, 204, 0);
+}
 footer > div > div:first-of-type h4:first-of-type {
   margin: 30px 0 10px 0;
 }

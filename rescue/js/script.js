@@ -1,42 +1,47 @@
 var $petfinderAPI = 'https://api.petfinder.com/';
 var $devkey = '3c73470956892905e562a55f0e113f50';
 
+function updateShelterStatus(message) {
+  console.log(message);
+  if(message) {
+    $('#searchstatus').fadeOut("slow","swing", function() {
+      $('#searchstatus').html(`<h3>${message}</h3>`)
+        .fadeIn("slow","swing");
+    });
+  } else {
+    $('#searchstatus').fadeOut("slow","swing", function() {
+      $('#searchstatus').empty();
+    });
+  };
+};
+
 function getShelter(id) {
-  $('#searchstatus').fadeOut("fast","linear", function() {
-    $('#searchstatus').html('<h3>Getting shelter info...</h3>');
-    $('#searchstatus').fadeIn("slow","swing");
-  });
+  updateShelterStatus('Getting that family info...');
   $.getJSON($petfinderAPI + 'shelter.get?id=' + id + '&format=json&key=' + $devkey + '&callback=?')
     .done(function(shelter){
       var shelterdetail = shelter.petfinder.shelter;
       console.log(shelter);
-      $('#searchstatus').fadeOut("slow","swing", function() {
-        $('searchstatus').empty();
-      });
       $('#shelters').fadeOut("slow","swing", function() {
-        $('#shelters').empty();
-        $('#shelters').html('<div class="shelterdetail"><h4>'+ shelterdetail.name.$t +
-        '</h4><h5>' + shelterdetail.email.$t + '</h5></div>');
-        $('#shelters').fadeIn("slow","swing");
+        $('#shelters').empty()
+          .html('<div class="shelterdetail"><h4>'+ shelterdetail.name.$t +
+            '</h4><h5>' + shelterdetail.email.$t + '</h5></div>')
+          .fadeIn("slow","swing");
       });
+    })
+    .done(function(){
+      updateShelterStatus(null);
     })
     .error(function(err) {
       console.log('Get shelter by ID error! ' + err);
     });
-}
+};
 
 function getSheltersZip(zip) {
-  $('#searchstatus').fadeOut("fast","linear", function() {
-    $('#searchstatus').html('<h3>Finding families...</h3>');
-    $('#searchstatus').fadeIn("slow","swing");
-  });
+  updateShelterStatus('Finding families...');
   $.getJSON($petfinderAPI + 'shelter.find?location=' + zip + '&format=json&key=' + $devkey + '&callback=?')
     .done(function(petApiData){
       console.log(petApiData);
       if(petApiData.petfinder.hasOwnProperty('shelters')) {
-        $('#searchstatus').fadeOut("slow","swing", function() {
-          $('searchstatus').empty();
-        });
         $('#shelters').fadeOut("slow","swing", function() {
           $('#shelters').empty();
           var shelters = petApiData.petfinder.shelters.shelter;
@@ -45,27 +50,31 @@ function getSheltersZip(zip) {
             $('#shelters').append(listing);
           };
           $('#shelters').fadeIn("slow","swing");
-          $('#shelters').on("click", ".shelter", function(){
+          /*$('#shelters').on("click", ".shelter", function(){
+            getShelter($(this).attr('shelterid'));
+            $('html, body').animate({
+              scrollTop: $('#adoption').offset().top - 35
+            }, 500);
+          });*/
+          $('.shelter').on("click", function() {
             getShelter($(this).attr('shelterid'));
             $('html, body').animate({
               scrollTop: $('#adoption').offset().top - 35
             }, 500);
           });
         });
-        $('#searchstatus').html('<h3>Here\'s what we found...</h3>');
-        $('#searchstatus').fadeIn("slow","swing");
+        updateShelterStatus('Here\'s what we found...');
       } else {
-        $('#searchstatus').fadeOut("slow","swing", function() {
-          $('searchstatus').empty();
+        updateShelterStatus('Hmm... We didn\'t find any shelters. Please check the zip code and try again.');
+        $('#shelters').fadeOut("slow","swing", function() {
+          $('#shelters').empty();
         });
-        $('#searchstatus').html('<h3>Hmm... We didn\'t find any shelters.  Please check the zip code and try again.</h3>');
-        $('#searchstatus').fadeIn("slow","swing");
       }
     })
     .error(function(err){
       console.log('Get shelters by zip error! ' + err);
     });
-}
+};
 
 
 $(document).ready(function() {
@@ -89,11 +98,7 @@ $(document).ready(function() {
     if($('#sheltersearch').val().length === 5) {
       getSheltersZip($('#sheltersearch').val());
     } else {
-      $('#searchstatus').fadeOut("slow","swing", function() {
-        $('searchstatus').empty();
-      });
-      $('#searchstatus').html('<h3>Oops! That doesn\'t look like a valid zip code.</h3>');
-      $('#searchstatus').fadeIn("slow","swing");
+      updateShelterStatus('Oops! That doesn\'t look like a valid zip code.');
     }
   });
-})
+});

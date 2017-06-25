@@ -15,16 +15,19 @@ function updateShelterStatus(message) {
   };
 };
 
-function evaluatePictures(photos) {
+function evaluatePictures(photos, animal) {
   /*trying to ascertain if a usuable picture is available
   otherwise display default value based on cat or dog*/
   var photoslength = photos.length;
   var goodphoto = '';
+  var defaultphoto = animal === "dog" ? '../img/dogdefault_1.png' : '../img/catdefault_1.png';
   for(i = 0;i < photoslength;i++) {
-    if(photos[i][@size] === "t") {
-      goodphotos = photos[i];
+    if(photos[i]['@size'] === "pn") {
+      goodphoto = photos[i].$t;
+      //console.log(goodphoto);
     }
   };
+  return goodphoto != '' ? goodphoto : defaultphoto;
 };
 
 function getShelter(id) {
@@ -79,7 +82,10 @@ function getSheltersZip(zip) {
           $('#shelters').empty();
           var shelters = petApiData.petfinder.shelters.shelter;
           for (i in shelters) {
-            var listing = '<div class="shelter" shelterid=' + shelters[i].id.$t + '><h4>' + shelters[i].name.$t + '</h4><div>See Family</div></div>';
+            var listing = '<div class="shelter" shelterid=' + shelters[i].id.$t + '>\
+                <h4>' + shelters[i].name.$t + '</h4>\
+                <div>See Family</div>\
+              </div>';
             $('#shelters').append(listing);
           };
           $('#shelters').fadeIn("slow","swing");
@@ -112,28 +118,41 @@ function getShelterPets(id) {
         console.log('found pets is an array');
         var rescues = petApiData.petfinder.pets.pet;
         for (x in rescues) {
-          var petdescription = rescues[x].description.$t ? rescues[x].description.$t.replace("'","\'") : "Not available";
+          //description data is random, holding off for now
+          //var petdescription = rescues[x].description.$t ? rescues[x].description.$t.replace("'","\'") : "Not available";
+          var petbreed = rescues[x].breeds.breed.$t ? rescues[x].breeds.breed.$t : "Unknown";
+          var petimage = evaluatePictures(rescues[x].media.photos.photo, rescues[x].animal.$t);
           $('shelter-pets').empty();
           $('.shelter-pets').append('<div>\
-              <h4>' + rescues[x].name.$t + '</h4>\
+              <figure>\
+                <img src=' + petimage + '/>\
+                <figcaption>\
+                  <h4>' + rescues[x].name.$t + '</h4>\
+                </figcaption>\
+              </figure>\
               <span>Sex: ' + rescues[x].sex.$t + '</span>\
-              <span>Breed: ' + rescues[x].breeds.breed.$t + '</span>\
-              <p>' + petdescription + '</p>\
+              <span>Breed: ' + petbreed + '</span>\
             </div>');
         };
       } else if (petApiData.petfinder.pets.hasOwnProperty('pet') && typeof petApiData.petfinder.pets.pet === 'object') {
         console.log('found pet is an object');
         var rescues = petApiData.petfinder.pets.pet;
+        var petbreed = rescues.breeds.breed.$t ? rescues.breeds.breed.$t : "Unknown";
+        var petimage = evaluatePictures(rescues.media.photos.photo, rescues.animal.$t);
         $('shelter-pets').empty();
         $('.shelter-pets').append('<div>\
-            <h4>' + rescues.name.$t + '</h4>\
+            <figure>\
+              <img src=' + petimage + ' alt="pet image" />\
+              <figcaption>\
+                <h4>' + rescues.name.$t + '</h4>\
+              </figcaption>\
+            </figure>\
             <span>Sex: ' + rescues.sex.$t + '</span>\
-            <span>Breed: ' + rescues.breeds.breed.$t + '</span>\
-            <p>' + rescues.description.$t.replace("'","\'") + '</p>\
+            <span>Breed: ' + petbreed + '</span>\
           </div>');
       } else {
         console.log('looked for pets but none found');
-        $('.shelter-pets').append('h4>Looks like there are no pets currently at this shelter</h4>');
+        $('.shelter-pets').append('<h4>Looks like there are no pets currently at this shelter</h4>');
       }
     })
     .error(function(err){

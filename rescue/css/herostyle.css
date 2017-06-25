@@ -59,17 +59,15 @@ h3 {
 }
 .insettext > p,
 #donate p,
-#adoption > p {
+#adoption > div > p {
   margin-top: 50px;
   font-size: 20px;
+  text-align: left;
 }
 #adoption {
   height: auto;
   padding: 15px;
   text-align: center;
-}
-#adoption p {
-  text-align: left;
 }
 #adoption h2 {
   text-align: left;
@@ -89,6 +87,11 @@ h3 {
   font-size: 20px;
   margin-top: 5px;
   border: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 #sheltersearchgo {
   color: white;
@@ -113,8 +116,12 @@ h3 {
   padding: 5px;
   margin: 5px auto;
   border-radius: 5px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
+}
+.shelter > div {
+  background: #4ba2c6;
+  color: white;
 }
 .shelter-detail {
   background: #81d4fa;
@@ -126,15 +133,16 @@ h3 {
   text-align: left;
 }
 .shelter-header {
+  border-bottom: 3px solid black;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 95%;
   height: auto;
+  margin: 5px auto;
+  width: 95%;
 }
 .shelter-header > div {
-  width: 300px;
+  width: 400px;
   height: 100%;
   margin: 0 auto;
 }
@@ -147,6 +155,7 @@ h3 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 5px auto;
 }
 .shelter-pets > div {
   width: 400px;
@@ -160,6 +169,24 @@ h3 {
 }
 .shelter-pets > div > span {
   display: block;
+}
+.shelter-pets figure {
+  width: auto;
+}
+.shelter-pets figure img {
+  display: block;
+  clip: auto;
+  margin: 0 auto;
+  max-height: 400px;
+}
+.shelter-pets figcaption {
+  background: #4ba2c6;
+  color: white;
+  height: 25px;
+  text-align: center;
+}
+.shelter-pets figcaption h4 {
+  line-height: 25px;
 }
 .clearfix:after {
   visibility: hidden;

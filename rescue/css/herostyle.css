@@ -118,6 +118,11 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+  transition: all .3s;
+}
+.shelter:hover {
+  box-shadow: 2px 2px 3px grey;
+  transform: scale(1.03);
 }
 .shelter > div {
   background: #4ba2c6;
@@ -172,12 +177,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .shelter-pets figure {
   width: auto;
+  overflow: hidden;
 }
 .shelter-pets figure img {
   display: block;
-  clip: auto;
   margin: 0 auto;
-  max-height: 400px;
+  height: 300px;
+  width: auto;
 }
 .shelter-pets figcaption {
   background: #4ba2c6;

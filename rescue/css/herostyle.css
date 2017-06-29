@@ -2,9 +2,9 @@
   --primary-light: #60ad5e;
   --primary-dark: #005005;
   --primary: #2e7d32;
-  --secondary-light: #b5ffff;
-  --secondary-dark: #4ba2c6;
-  --secondary: #81d3f9;
+  --secondary-light: #ffffb0;
+  --secondary-dark: #ca9b52;
+  --secondary: #ffcc80;
 }*/
 body {
   padding-top: 40px;
@@ -21,7 +21,7 @@ h3 {
   color: white;
 }
 #rescue-nav a:hover {
-  color: #81d4fa;
+  color: #ffffb0;
 }
 #rescue-nav {
   border: none;
@@ -37,7 +37,7 @@ h3 {
   height: 650px;
   padding: 50px 0 50px 50px;
   background-image: url("https://images.unsplash.com/photo-1442605527737-ed62b867591f?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=767&amp;h=511&amp;q=80&amp;cs=tinysrgb");
-  background-position: left;
+  background-position: center;
   background-size: cover;
 }
 .insettext {
@@ -73,7 +73,7 @@ h3 {
   text-align: left;
 }
 #adoption > div:first-of-type > div {
-  background: #4ba3c7;
+  background: #ffcc80;
   width: 300px;
   height: 50px;
   font-size: 20px;
@@ -110,12 +110,11 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 20px 0;
 }
 .shelter {
-  background: #81d4fa;
+  background: #ffcc80;
   height: auto;
   width: 300px;
   padding: 5px;
   margin: 5px auto;
-  border-radius: 5px;
   text-align: center;
   cursor: pointer;
   transition: all .3s;
@@ -125,11 +124,11 @@ input[type=number]::-webkit-outer-spin-button {
   transform: scale(1.03);
 }
 .shelter > div {
-  background: #4ba2c6;
+  background: #ca9b52;
   color: white;
 }
 .shelter-detail {
-  background: #81d4fa;
+  background: #ffcc80;
   height: auto;
   width: 80%;
   padding: 5px;
@@ -186,7 +185,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: auto;
 }
 .shelter-pets figcaption {
-  background: #4ba2c6;
+  background: #ca9b52;
   color: white;
   height: 25px;
   text-align: center;
@@ -230,7 +229,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #becomehero:hover,
 #donatehero:hover {
-  background: #81d4fa;
+  background: #ffcc80;
   color: black;
   cursor: pointer;
 }
@@ -281,7 +280,7 @@ footer input {
   #donate,
   #foster {
     height: auto;
-    background: #81d4fa;
+    background: #ffcc80;
   }
   .insettext > p,
   #donate p,
@@ -314,7 +313,7 @@ footer input {
   #foster {
     width: 100%;
     height: auto;
-    background: #81d4fa;
+    background: #ffcc80;
   }
   .insetblk,
   .insettext,

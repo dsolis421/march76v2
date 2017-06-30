@@ -47,16 +47,7 @@ h3 {
   padding: 20px;
   color: white;
 }
-#becomehero {
-  background: #60ad5e;
-  width: 200px;
-  height: 35px;
-  line-height: 35px;
-  color: white;
-  text-align: center;
-  margin-top: 100px;
-  font-size: 20px;
-}
+
 .insettext > p,
 #donate p,
 #adoption > div > p {
@@ -175,14 +166,14 @@ input[type=number]::-webkit-outer-spin-button {
   display: block;
 }
 .shelter-pets figure {
-  width: auto;
+  width: 100%;
   overflow: hidden;
 }
 .shelter-pets figure img {
   display: block;
   margin: 0 auto;
   height: 300px;
-  width: auto;
+  max-width: 100%;
 }
 .shelter-pets figcaption {
   background: #ca9b52;
@@ -217,7 +208,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 20px;
   color: white;
 }
-#donatehero {
+.home-button {
   background: #60ad5e;
   width: 200px;
   height: 35px;
@@ -227,8 +218,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 50px;
   font-size: 20px;
 }
-#becomehero:hover,
-#donatehero:hover {
+.home-button:hover {
   background: #ffcc80;
   color: black;
   cursor: pointer;
@@ -265,6 +255,7 @@ footer p {
 footer input {
   margin: 10px 0px 0px 10px;
 }
+
 @media screen and (max-width: 367px) {
   #intro,
   #donate,
@@ -291,9 +282,6 @@ footer input {
     width: 100%;
     height: auto;
   }
-  #dogs {
-    margin: 15px 0;
-  }
   #bizsupport > div > div {
     margin: 10px auto;
   }
@@ -301,6 +289,7 @@ footer input {
     width: 90%;
   }
 }
+
 @media screen and (min-width: 368px) and (max-width: 767px) {
   #intro,
   #donate,
@@ -335,20 +324,8 @@ footer input {
     margin: 10px auto;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1026px) {
-  .available {
-    width: 90%;
-  }
-}
-@media screen and (min-width: 1027px) and (max-width: 1199px) {
-  #shelters {
-    margin: 20px 0;
-  }
-}
-@media screen and (min-width: 1200px) and (max-width: 1411px) {
-  #adoption > .row {
-    padding: 15px;
-  }
+
+@media screen and (min-width: 1027px) and (max-width: 1411px) {
   #shelters {
     margin: 20px 0;
   }

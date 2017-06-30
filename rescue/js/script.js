@@ -30,39 +30,47 @@ function evaluatePictures(photos, animal) {
   return goodphoto != '' ? goodphoto : defaultphoto;
 };
 
+function renderShelter(shelter) {
+  $('#shelters').fadeOut("slow","swing", function() {
+    $('#shelters').empty()
+      .html('<div class="shelter-detail">\
+          <div class="shelter-header">\
+            <div class="shelter-name">\
+              <h3>'+ shelter.sheltername +'</h3>\
+            </div>\
+            <div class="shelter-contact">\
+              <h4>Address: ' + shelter.shelteraddress1  + ' ' +
+                shelter.shelteraddress2 + ', ' +
+                shelter.sheltercity + ', ' +
+                shelter.shelterstate + '</h4>\
+              <h4>Phone: ' + shelter.shelterphone + '</h4>\
+              <h4>Email: ' + shelter.shelteremail + '</h4>\
+            </div>\
+          </div>\
+          <div class="shelter-pets">\
+          </div>\
+        </div>')
+      .fadeIn("slow","swing",getShelterPets(shelter.shelterid));
+      });
+}
+
 function getShelter(id) {
   updateShelterStatus('Getting that family info...');
   $.getJSON($petfinderAPI + 'shelter.get?id=' + id + '&format=json&key=' + $devkey + '&callback=?')
-    .done(function(shelter){
-      console.log(shelter);
-      var shelterdetail = shelter.petfinder.shelter;
-      var sheltername = shelterdetail.name.$t;
-      var shelteraddress1 = shelterdetail.address1.$t ? shelterdetail.address1.$t : "Not available";
-      var shelteraddress2 = shelterdetail.address2.$t ? shelterdetail.address2.$t : "";
-      var sheltercity = shelterdetail.city.$t ? shelterdetail.city.$t : "";
-      var shelterstate = shelterdetail.state.$t ? shelterdetail.state.$t : "";
-      var shelterphone = shelterdetail.phone.$t ? shelterdetail.phone.$t : "Not available";
-      $('#shelters').fadeOut("slow","swing", function() {
-        $('#shelters').empty()
-          .html('<div class="shelter-detail">\
-              <div class="shelter-header">\
-                <div class="shelter-name">\
-                  <h3>'+ sheltername +'</h3>\
-                </div>\
-                <div class="shelter-contact">\
-                  <h4>Address: ' + shelteraddress1  + ' ' +
-                    shelteraddress2 + ', ' +
-                    sheltercity + ', ' +
-                    shelterstate + '</h4>\
-                  <h4>Phone: ' + shelterphone + '</h4>\
-                  <h4>Email: ' + shelterdetail.email.$t + '</h4>\
-                </div>\
-              </div>\
-              <div class="shelter-pets">\
-              </div>\
-            </div>')
-          .fadeIn("slow","swing",getShelterPets(shelterdetail.id.$t));
-      });
+    .done(function(shelterdata){
+      console.log(shelterdata);
+      shelterdetail = shelterdata.petfinder.shelter;
+      var shelterObject = {
+        shelterid: shelterdetail.id.$t,
+        sheltername: shelterdetail.name.$t,
+        shelteraddress1: shelterdetail.address1.$t ? shelterdetail.address1.$t : "Not available",
+        shelteraddress2: shelterdetail.address2.$t ? shelterdetail.address2.$t : "",
+        sheltercity: shelterdetail.city.$t ? shelterdetail.city.$t : "",
+        shelterstate: shelterdetail.state.$t ? shelterdetail.state.$t : "",
+        shelterphone: shelterdetail.phone.$t ? shelterdetail.phone.$t : "Not available",
+        shelteremail: shelterdetail.email.$t ? shelterdetail.email.$t : "Not available"
+      }
+      renderShelter(shelterObject);
     })
     .done(function(){
       updateShelterStatus(null);
@@ -82,6 +90,7 @@ function getSheltersZip(zip) {
           $('#shelters').empty();
           var shelters = petApiData.petfinder.shelters.shelter;
           for (i in shelters) {
+            //abstract this render as a function accepting an object
             var listing = '<div class="shelter" shelterid=' + shelters[i].id.$t + '>\
                 <h4>' + shelters[i].name.$t + '</h4>\
                 <div>See Family</div>\
@@ -122,6 +131,7 @@ function getShelterPets(id) {
           //var petdescription = rescues[x].description.$t ? rescues[x].description.$t.replace("'","\'") : "Not available";
           var petbreed = rescues[x].breeds.breed.$t ? rescues[x].breeds.breed.$t : "Unknown";
           var petimage = evaluatePictures(rescues[x].media.photos.photo, rescues[x].animal.$t);
+          //abstract this render as a function accepting an object
           $('shelter-pets').empty();
           $('.shelter-pets').append('<div>\
               <figure>\

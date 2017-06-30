@@ -54,6 +54,20 @@ function renderShelter(shelter) {
       });
 }
 
+function renderPet(pet) {
+  $('shelter-pets').empty();
+  $('.shelter-pets').append('<div>\
+      <figure>\
+        <img src=' + pet.petimage + '/>\
+        <figcaption>\
+          <h4>' + pet.petname + '</h4>\
+        </figcaption>\
+      </figure>\
+      <span>Sex: ' + pet.petsex + '</span>\
+      <span>Breed: ' + pet.petbreed + '</span>\
+    </div>');
+}
+
 function getShelter(id) {
   updateShelterStatus('Getting that family info...');
   $.getJSON($petfinderAPI + 'shelter.get?id=' + id + '&format=json&key=' + $devkey + '&callback=?')
@@ -122,44 +136,32 @@ function getShelterPets(id) {
   $.getJSON($petfinderAPI + 'shelter.getPets?id=' + id + '&output=full&format=json&key=' + $devkey + '&callback=?')
     .done(function(petApiData){
       console.log(petApiData);
+      var rescues = petApiData.petfinder.pets.pet;
+      var isReturnedDataArray = petApiData.petfinder.pets.hasOwnProperty('pet') && Array.isArray(petApiData.petfinder.pets.pet);
+      var isReturnedDataObject = petApiData.petfinder.pets.hasOwnProperty('pet') && typeof petApiData.petfinder.pets.pet === 'object';
       //petfinder returns an object if only one pet exists, it returns an array of objects for multiple pets
-      if(petApiData.petfinder.pets.hasOwnProperty('pet') && Array.isArray(petApiData.petfinder.pets.pet)) {
+      if(isReturnedDataArray) {
         console.log('found pets is an array');
-        var rescues = petApiData.petfinder.pets.pet;
         for (x in rescues) {
           //description data is random, holding off for now
           //var petdescription = rescues[x].description.$t ? rescues[x].description.$t.replace("'","\'") : "Not available";
-          var petbreed = rescues[x].breeds.breed.$t ? rescues[x].breeds.breed.$t : "Unknown";
-          var petimage = evaluatePictures(rescues[x].media.photos.photo, rescues[x].animal.$t);
-          //abstract this render as a function accepting an object
-          $('shelter-pets').empty();
-          $('.shelter-pets').append('<div>\
-              <figure>\
-                <img src=' + petimage + '/>\
-                <figcaption>\
-                  <h4>' + rescues[x].name.$t + '</h4>\
-                </figcaption>\
-              </figure>\
-              <span>Sex: ' + rescues[x].sex.$t + '</span>\
-              <span>Breed: ' + petbreed + '</span>\
-            </div>');
+          var petObject = {
+            petname: rescues[x].name.$t,
+            petsex: rescues[x].sex.$t,
+            petbreed: rescues[x].breeds.breed.$t ? rescues[x].breeds.breed.$t : "Unknown",
+            petimage: evaluatePictures(rescues[x].media.photos.photo, rescues[x].animal.$t)
+          };
+          renderPet(petObject);
         };
-      } else if (petApiData.petfinder.pets.hasOwnProperty('pet') && typeof petApiData.petfinder.pets.pet === 'object') {
+      } else if (isReturnedDataObject) {
         console.log('found pet is an object');
-        var rescues = petApiData.petfinder.pets.pet;
-        var petbreed = rescues.breeds.breed.$t ? rescues.breeds.breed.$t : "Unknown";
-        var petimage = evaluatePictures(rescues.media.photos.photo, rescues.animal.$t);
-        $('shelter-pets').empty();
-        $('.shelter-pets').append('<div>\
-            <figure>\
-              <img src=' + petimage + ' alt="pet image" />\
-              <figcaption>\
-                <h4>' + rescues.name.$t + '</h4>\
-              </figcaption>\
-            </figure>\
-            <span>Sex: ' + rescues.sex.$t + '</span>\
-            <span>Breed: ' + petbreed + '</span>\
-          </div>');
+        var petObject = {
+          petname: rescues.name.$t,
+          petsex: rescues.sex.$t,
+          petbreed: rescues.breeds.breed.$t ? rescues.breeds.breed.$t : "Unknown",
+          petimage: evaluatePictures(rescues.media.photos.photo, rescues.animal.$t)
+        };
+        renderPet(petObject);
       } else {
         console.log('looked for pets but none found');
         $('.shelter-pets').append('<h4>Looks like there are no pets currently at this shelter</h4>');

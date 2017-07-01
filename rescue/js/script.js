@@ -17,7 +17,7 @@ function updateShelterStatus(message) {
 
 function evaluatePictures(photos, animal) {
   /*trying to ascertain if a usuable picture is available
-  otherwise display default value based on cat or dog*/
+  otherwise display default pic based on cat or dog*/
   var photoslength = photos.length;
   var goodphoto = '';
   var defaultphoto = animal === "dog" ? '../img/dogdefault_1.png' : '../img/catdefault_1.png';
@@ -30,7 +30,8 @@ function evaluatePictures(photos, animal) {
   return goodphoto != '' ? goodphoto : defaultphoto;
 };
 
-function renderShelter(shelter) {
+function renderSelectedShelter(shelter) {
+  console.log('trying to render ', shelter);
   $('#shelters').fadeOut("slow","swing", function() {
     $('#shelters').empty()
       .html('<div class="shelter-detail">\
@@ -55,7 +56,7 @@ function renderShelter(shelter) {
 }
 
 function renderPet(pet) {
-  $('shelter-pets').empty();
+  $('.shelter-pets').empty();
   $('.shelter-pets').append('<div>\
       <figure>\
         <img src=' + pet.petimage + '/>\
@@ -68,11 +69,26 @@ function renderPet(pet) {
     </div>');
 }
 
+/*function renderFeaturedPets(featuredpet) {
+  $('#featured-pet').empty();
+  $('#featured-pet').append(
+    '<div>\
+    <figure>\
+      <img src=' + pet.petimage + '/>\
+      <figcaption>\
+        <h4>' + pet.petname + '</h4>\
+      </figcaption>\
+    </figure>\
+    <span>Sex: ' + pet.petsex + '</span>\
+    <span>Breed: ' + pet.petbreed + '</span>\
+  </div>'
+  );
+}*/
+
 function getShelter(id) {
   updateShelterStatus('Getting that family info...');
   $.getJSON($petfinderAPI + 'shelter.get?id=' + id + '&format=json&key=' + $devkey + '&callback=?')
     .done(function(shelterdata){
-      console.log(shelterdata);
       shelterdetail = shelterdata.petfinder.shelter;
       var shelterObject = {
         shelterid: shelterdetail.id.$t,
@@ -84,10 +100,8 @@ function getShelter(id) {
         shelterphone: shelterdetail.phone.$t ? shelterdetail.phone.$t : "Not available",
         shelteremail: shelterdetail.email.$t ? shelterdetail.email.$t : "Not available"
       }
-      renderShelter(shelterObject);
-    })
-    .done(function(){
-      updateShelterStatus(null);
+      console.log('shelter object is ', shelterObject);
+      return shelterObject;
     })
     .error(function(err) {
       console.log('Get shelter by ID error! ' + err);
@@ -113,7 +127,7 @@ function getSheltersZip(zip) {
           };
           $('#shelters').fadeIn("slow","swing");
           $('.shelter').on("click", function() {
-            getShelter($(this).attr('shelterid'));
+            getSelectedShelter($(this).attr('shelterid'));
             $('html, body').animate({
               scrollTop: $('#adoption').offset().top - 35
             }, 500);
@@ -172,8 +186,42 @@ function getShelterPets(id) {
     });
 }
 
+function getSelectedShelter(id) {
+  console.log('selected shelter id', id);
+  var selectedshelter = getShelter(id);
+  renderSelectedShelter(selectedshelter);
+  updateShelterStatus(null);
+}
+
+function getRandomPet(zip) {
+  $.getJSON($petfinderAPI + 'pet.getRandom?location=' + zip + '&output=full&format=json&key=' + $devkey + '&callback=?')
+    .done(function(petApiData){
+      var randompet = petApiData.petfinder.pet;
+      console.log('random pet', randompet);
+      var featuredObject = {
+        featuredname: randompet.name.$t,
+        featuredsex: randompet.sex.$t,
+        featuredbreed: randompet.breeds.breed.$t ? randompet.breeds.breed.$t : "Unknown",
+        featuredimage: evaluatePictures(randompet.media.photos.photo, randompet.animal.$t)
+      };
+      return featuredObject
+    })
+    .error(function(err){
+      console.log('Get featured pet error! ' + err);
+    });
+}
+
+function getFeaturedPets() {
+  const ZIPSCODES = ['78641','76537','78626','78664','78680','78660','78729','78759','78666','78130'];
+  var featured = [];
+  for (i = 0; i < 11; i++) {
+    featured.push(getRandomPet(ZIPSCODES[i]));
+  }
+}
 
 $(document).ready(function() {
+
+  getFeaturedPets();
 
   $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {

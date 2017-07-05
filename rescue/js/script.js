@@ -1,5 +1,6 @@
 var $petfinderAPI = 'https://api.petfinder.com/';
 var $devkey = '3c73470956892905e562a55f0e113f50';
+var selectedshelter;
 
 function updateShelterStatus(message) {
   console.log(message);
@@ -56,7 +57,7 @@ function renderSelectedShelter(shelter) {
 }
 
 function renderPet(pet) {
-  $('.shelter-pets').empty();
+  console.log('rendering pet ', pet.petname);
   $('.shelter-pets').append('<div>\
       <figure>\
         <img src=' + pet.petimage + '/>\
@@ -101,7 +102,7 @@ function getShelter(id) {
         shelteremail: shelterdetail.email.$t ? shelterdetail.email.$t : "Not available"
       }
       console.log('shelter object is ', shelterObject);
-      return shelterObject;
+      selectedshelter = shelterObject;
     })
     .error(function(err) {
       console.log('Get shelter by ID error! ' + err);
@@ -188,8 +189,10 @@ function getShelterPets(id) {
 
 function getSelectedShelter(id) {
   console.log('selected shelter id', id);
-  var selectedshelter = getShelter(id);
-  renderSelectedShelter(selectedshelter);
+  $.when(getShelter(id)).then(renderSelectedShelter(selectedshelter));
+  /*setTimeout(function() {
+    renderSelectedShelter(selectedshelter);
+  }, 500);*/
   updateShelterStatus(null);
 }
 

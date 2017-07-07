@@ -1,6 +1,6 @@
 var $petfinderAPI = 'https://api.petfinder.com/';
 var $devkey = '3c73470956892905e562a55f0e113f50';
-var selectedshelter;
+var selectedshelter = undefined;
 
 function updateShelterStatus(message) {
   console.log(message);
@@ -32,7 +32,7 @@ function evaluatePictures(photos, animal) {
 };
 
 function renderSelectedShelter(shelter) {
-  console.log('trying to render ', shelter);
+  console.log('trying to render ', shelter.sheltername);
   $('#shelters').fadeOut("slow","swing", function() {
     $('#shelters').empty()
       .html('<div class="shelter-detail">\
@@ -86,7 +86,7 @@ function renderPet(pet) {
   );
 }*/
 
-function getShelter(id) {
+function getShelter(id, callback) {
   updateShelterStatus('Getting that family info...');
   $.getJSON($petfinderAPI + 'shelter.get?id=' + id + '&format=json&key=' + $devkey + '&callback=?')
     .done(function(shelterdata){
@@ -101,7 +101,7 @@ function getShelter(id) {
         shelterphone: shelterdetail.phone.$t ? shelterdetail.phone.$t : "Not available",
         shelteremail: shelterdetail.email.$t ? shelterdetail.email.$t : "Not available"
       }
-      console.log('shelter object is ', shelterObject);
+      //console.log('shelter object is ', shelterObject);
       selectedshelter = shelterObject;
     })
     .error(function(err) {
@@ -113,7 +113,7 @@ function getSheltersZip(zip) {
   updateShelterStatus('Finding families...');
   $.getJSON($petfinderAPI + 'shelter.find?location=' + zip + '&format=json&key=' + $devkey + '&callback=?')
     .done(function(petApiData){
-      console.log(petApiData);
+      //console.log(petApiData);
       if(petApiData.petfinder.hasOwnProperty('shelters')) {
         $('#shelters').fadeOut("slow","swing", function() {
           $('#shelters').empty();
@@ -189,11 +189,22 @@ function getShelterPets(id) {
 
 function getSelectedShelter(id) {
   console.log('selected shelter id', id);
-  $.when(getShelter(id)).then(renderSelectedShelter(selectedshelter));
+  getShelter(id);
+  //could not figure out a way to make this async after getShelter
+  var timer = setInterval(function(){
+    console.log('waiting on shelter');
+    if(selectedshelter){
+      renderSelectedShelter(selectedshelter);
+      updateShelterStatus(null);
+      clearInterval(timer);
+      return;
+    }
+  }, 500);
+
+  //getShelter(id, renderSelectedShelter(selectedshelter));
   /*setTimeout(function() {
     renderSelectedShelter(selectedshelter);
   }, 500);*/
-  updateShelterStatus(null);
 }
 
 function getRandomPet(zip) {

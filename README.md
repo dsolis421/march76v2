@@ -1,6 +1,6 @@
 # Danny Solis
 ## www.march76.com
-### Last redesign 7/15/2017
+### v10 last update 7/15/2017
 Working portfolio
 HTML
 CSS

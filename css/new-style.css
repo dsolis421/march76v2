@@ -62,35 +62,41 @@ section {
 .danny, .site h2, #mar-nav {
   font-family: 'Raleway', serif;
 }
-#name-header, #site-space {
+#name-header, #site-space, #feedback-space {
   padding: 30px 15px;
   background-color: rgb(53, 53, 53);
 }
+
 #quote {
   color: rgb(53, 53, 53);
 }
+
 #quote i {
   height: 100%;
   color: rgb(136, 204, 0);
 }
+
 #quote > div {
   width: 70%;
   height: auto;
   margin: 0 auto;
   padding: 10px 0;
+}
+
+#myquote, #skill-space {
+  font-size: 40px;
   font-family: 'Raleway', serif;
+  margin: 0;
   text-align: center;
 }
-#myquote {
-  font-size: 40px;
-  margin: 0;
-}
+
 #site-space {
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .site {
   width: 300px;
   height: 250px;
@@ -99,18 +105,23 @@ section {
   transition: all .8s;
   transition-timing-function: ease-out;
 }
+
 .site:nth-of-type(1) {
   background-image: url('../img/toh_tnail.png');
 }
+
 .site:nth-of-type(2) {
   background-image: url('../img/pet_tnail.png');
 }
+
 .site:nth-of-type(3) {
   background-image: url('../img/brdgt_tnail.png');
 }
+
 .site:nth-of-type(4) {
   background-image: url('../img/movie_tnail.png');
 }
+
 .site > a > div {
   width: 300px;
   height: 250px;
@@ -121,15 +132,18 @@ section {
   transition: all .8s;
   transition-timing-function: ease-out;
 }
+
 .site p {
   font-size: 18px;
   visibility: hidden;
 }
+
 .site:hover {
   width: 300px;
   height: 300px;
   cursor: pointer;
 }
+
 .site:hover > a > div {
   width: 300px;
   height: 300px;
@@ -137,20 +151,36 @@ section {
   background: rgba(53, 53, 53, .6);
   border: 1px solid rgb(136, 204, 0);
 }
+
 .site:hover h2 {
   color: rgb(136, 204, 0);
 }
+
 .site a > div:hover p {
   visibility: visible;
 }
-#site-space > div:last-of-type {
+
+#skill-space {
+  padding: 2% 10%;
+}
+
+#skill-space span:nth-of-type(odd) {
+  color: rgb(53, 53, 53);
+}
+
+#skill-space span:nth-of-type(even) {
+  color: rgb(136, 204, 0);
+}
+
+#feedback-space > div {
   width: 50%;
   height: 300px;
   margin: 10px auto;
   padding: 10px;
   text-align: center;
 }
-#site-space input, #site-space textarea {
+
+#feedback-space input, #feedback-space textarea {
   margin: 10px auto;
   border: none;
   padding: 5px;
@@ -158,53 +188,66 @@ section {
   color: rgb(53, 53, 53);
   display: block;
 }
-#site-space input:not(:last-of-type), #site-space textarea {
+
+#feedback-space input:not(:last-of-type), #feedback-space textarea {
   width: 80%;
 }
-#site-space textarea {
+
+#feedback-space textarea {
   height: 170px;
 }
-#site-space input {
+
+#feedback-space input {
   height: 35px;
 }
-#site-space input:last-of-type {
+
+#feedback-space input:last-of-type {
   background: rgb(136, 204, 0);
   color: white;
   width: 150px;
 }
+
 #media-space {
   width: 100%;
   height: auto;
   padding: 10px;
 }
+
 #media-space > div {
   width: 70%;
   height: auto;
   margin: 0 auto;
   background: rgba(53, 53, 53, .5);
 }
+
 footer {
   padding: 20px 0;
   height: auto;
   background-color: rgb(53, 53, 53);
   text-align: center;
 }
+
 footer img {
   width: 98%;
 }
+
 footer a {
   margin: 0 15px;
 }
+
 footer h4 {
   font-size: 20px;
 }
+
 footer p {
   font-size: 18px;
   color: rgb(136, 204, 0);
 }
+
 footer > div > div:first-of-type h4:first-of-type {
   margin: 30px 0 10px 0;
 }
+
 @media screen and (max-width: 799px) {
   .bio {
     width: 280px;
@@ -217,7 +260,7 @@ footer > div > div:first-of-type h4:first-of-type {
     font-size: 20px;
     font-weight: bold;
   }
-  #site-space > div:last-of-type {
+  #feedback-space > div {
     width: 95%;
   }
   #media-space > div {
@@ -225,7 +268,7 @@ footer > div > div:first-of-type h4:first-of-type {
   }
 }
 @media screen and (min-width: 800px) and (max-width: 945px) {
-  #site-space > div:last-of-type {
+  #feedback-space > div {
     width: 95%;
   }
 }

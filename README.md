@@ -9,4 +9,5 @@ jQuery
 Express
 Mongoose
 React
+AngularJS
 MongoDb

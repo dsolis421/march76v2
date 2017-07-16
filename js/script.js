@@ -1,17 +1,3 @@
-$(window).load(function(){
-  var $ico = ["block3.ico","block7.ico","block6.ico"];
-
-  function pickICO() {
-    var x = Math.floor(Math.random() * 3);
-    var $icon = $ico[x];
-    /*var $link = window.document.getElementsByTagName('link[href="shortcut icon"]');
-    $($link).attr("href",$icon);*/
-    $('head').append('<link rel="shortcut icon" href='+$icon+' >');
-  };
-
-  pickICO();
-});
-
 $(document).ready(function(){
 
 /*var $bios = ['WebDeveloper','Husband','Gamer','DogLover','ProjectManager','DataAnalyst'];

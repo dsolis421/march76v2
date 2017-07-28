@@ -86,6 +86,7 @@ section {
 #myquote, #skill-space {
   font-size: 40px;
   font-family: 'Raleway', serif;
+  font-weight: bold;
   margin: 0;
   text-align: center;
 }
@@ -140,15 +141,13 @@ section {
 
 .site:hover {
   width: 300px;
-  height: 300px;
   cursor: pointer;
 }
 
 .site:hover > a > div {
   width: 300px;
-  height: 300px;
   text-align: right;
-  background: rgba(53, 53, 53, .6);
+  background: rgba(53, 53, 53, .8);
   border: 1px solid rgb(136, 204, 0);
 }
 
@@ -239,13 +238,13 @@ footer h4 {
   font-size: 20px;
 }
 
-footer p {
-  font-size: 18px;
+footer > div > div:first-of-type h4:first-of-type {
   color: rgb(136, 204, 0);
+  margin-bottom: 20px;
 }
 
-footer > div > div:first-of-type h4:first-of-type {
-  margin: 30px 0 10px 0;
+footer i {
+  margin-top: 20px;
 }
 
 footer i:hover {

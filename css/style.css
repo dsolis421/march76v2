@@ -27,16 +27,9 @@ time, mark, audio, video {
 }
 
 body {
-  color: white;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 0;
-  padding: 0;
+  color: rgb(53, 53, 53);
+  font-family: sans-serif;
+  text-align: center;
 }
 
 a,
@@ -48,9 +41,13 @@ a:focus {
 }
 
 section {
-  width: 100%;
   height: auto;
   transition: all 1s;
+}
+
+section:nth-of-type(odd):not(:first-of-type) {
+  background-color: rgb(53, 53, 53);
+  color: #fff;
 }
 
 .bio {
@@ -59,40 +56,46 @@ section {
   font-size: 20px;
   overflow-x: hidden;
 }
+
 .bio span {
   display: inline-block;
 }
+
 .bio span:nth-of-type(1),
 .bio span:nth-of-type(2) {
-  opacity: .1;
+  opacity: .4;
 }
+
 .bio span:nth-of-type(3),
 .bio span:nth-of-type(4) {
-  opacity: .3;
+  opacity: .6;
 }
+
 .bio span:nth-of-type(5),
 .bio span:nth-of-type(6) {
-  opacity: .5;
+  opacity: .8;
 }
+
 .bio span:last-of-type {
   color: rgb(136, 204, 0);
 }
+
 .danny {
   font-size: 150px;
-}
-.danny,
-.site h2, {
-  font-family: 'Raleway', serif;
-}
-#name-header,
-#site-space,
-#feedback-space {
-  padding: 30px 15px;
-  background-color: rgb(53, 53, 53);
+  margin-top: 100px;
 }
 
-#quote {
-  color: rgb(53, 53, 53);
+.danny,
+.site h2 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.site h2 {
+  font-size: 30px;
+}
+
+#feedback-space {
+  padding: 30px 15px;
 }
 
 #quote i {
@@ -104,12 +107,13 @@ section {
   width: 70%;
   height: auto;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 100px 0;
 }
 
-#myquote, #skill-space {
+#myquote,
+#skill-space {
   font-size: 40px;
-  font-family: 'Raleway', serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
   margin: 0;
   text-align: center;
@@ -120,12 +124,13 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .site {
   width: 300px;
-  height: 250px;
-  margin: 10px auto;
+  height: 300px;
+  margin: 50px 10px;
   background-position: center;
   transition: all .8s;
   transition-timing-function: ease-out;
@@ -148,12 +153,12 @@ section {
 }
 
 .site > a > div {
-  width: 300px;
-  height: 250px;
+  background: rgba(53, 53, 53, .2);
+  border: 1px solid white;
+  color: #fff;
+  height: 280px;
   padding: 10px;
   text-align: left;
-  border: 1px solid white;
-  background: rgba(53, 53, 53, .2);
   transition: all .8s;
   transition-timing-function: ease-out;
 }
@@ -164,12 +169,10 @@ section {
 }
 
 .site:hover {
-  width: 300px;
   cursor: pointer;
 }
 
 .site:hover > a > div {
-  width: 300px;
   text-align: right;
   background: rgba(53, 53, 53, .8);
   border: 1px solid rgb(136, 204, 0);
@@ -203,6 +206,10 @@ section {
   text-align: center;
 }
 
+#feedback-space input {
+  height: 35px;
+}
+
 #feedback-space input,
 #feedback-space textarea {
   margin: 10px auto;
@@ -219,11 +226,8 @@ section {
 }
 
 #feedback-space textarea {
+  font-family: sans-serif;
   height: 170px;
-}
-
-#feedback-space input {
-  height: 35px;
 }
 
 #feedback-space input:last-of-type {
@@ -233,22 +237,21 @@ section {
 }
 
 #media-space {
-  width: 100%;
-  height: auto;
   padding: 10px;
 }
 
 #media-space > div {
   width: 70%;
   height: auto;
-  margin: 0 auto;
+  margin: 20px auto;
   background: rgba(53, 53, 53, .5);
 }
 
 footer {
+  background-color: rgb(53, 53, 53);
+  color: #fff;
   padding: 20px 0;
   height: auto;
-  background-color: rgb(53, 53, 53);
   text-align: center;
 }
 

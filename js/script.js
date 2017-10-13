@@ -47,42 +47,27 @@ function pickQuote() {
 //loopBios();
 pickQuote();
 
-  var $scroll = $(document).scrollTop();
+var $scroll = $(document).scrollTop();
 
-  function STop() {
+function STop() {
     console.log("scroll is " + $scroll);
-  }
+}
 
-  $(document).scroll(function(){
+$(document).scroll(function(){
     $scroll = $(document).scrollTop();
     if ($scroll > 150) {
         $('#mar-nav').fadeIn(500,"swing");
     } else if ($scroll == 0) {
         $('#mar-nav').fadeOut(500,"swing");
     }
-  });
+});
 
-  $('#feedback-submit').submit(function(event) {
-        event.preventDefault();
-        $.ajax({
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScphQoYfir7fbGiMzRQqrgdyVQDNWxju4dLMc1Iwig5tAe02A/formResponse",
-            data: $(this).serialize(),
-            type: "POST",
-            dataType: "xml",
-            success: function(data) {
-                console.log('Submission successful');
-            },
-            error: function(xhr, status, error) {
-                console.log('Submission failed: ' + error);
-            }
-        });
-        $('#feedback-lead').html("Thank You!");
-        $('input:first-of-type, textarea').val("")
-    });
-
-  $('#marnav-navbar-collapse, #logo').click(function(){
-    $('#marnav-navbar-collapse').removeClass("in");
-    $('#marnav-navbar-collapse').attr("aria-expanded",false);
-  });
+$('nav .fa-chevron-down, .toggle-menu a').click(function(){
+  if($('.toggle-menu').hasClass('collapsed')){
+    $('.toggle-menu').removeClass('collapsed');
+  } else {
+    $('.toggle-menu').addClass('collapsed');
+  }
+});
 
 });

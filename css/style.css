@@ -43,17 +43,43 @@ a:focus {
 nav {
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 nav > div {
   background: rgb(53, 53, 53);
+  border-radius: 0 0 10px 10px;
   color: white;
   margin: 0 auto;
+  padding: 5px;
+  transition: all 1s;
   width: 300px;
 }
 
 nav > div > a {
   margin: 0 10px;
+}
+
+nav i:hover {
+  color: rgb(136, 204, 0);
+}
+
+.fa-chevron-down {
+  display: block;
+}
+
+.toggle-menu a {
+  display: block;
+  margin: 20px auto;
+}
+
+.collapsed {
+  display: none;
+}
+
+section {
+  height: auto;
+  transition: all 1s;
 }
 
 #intro {
@@ -63,10 +89,12 @@ nav > div > a {
 
 #intro .fa {
   cursor: pointer;
+  height: 50px;
   position: absolute;
-  left: calc(50vw - 31px);
+  left: calc(50vw - 33px);
   top: 300px;
   text-align: center;
+  width: 50px;
 }
 
 #intro h1 {
@@ -80,19 +108,32 @@ nav > div > a {
 }
 
 #intro .menu-add {
-  background: rgba(53, 53, 53, .8);
+  background: rgba(53, 53, 53, .7); /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* Standard syntax */
   border-radius: 100%;
   color: #fff;
   height: 200px;
   line-height: 200px;
   position: absolute;
-  top: 220px;
-  left: calc(50vw - 90px);
+  top: 222px;
+  left: calc(50vw - 113px);
   visibility: hidden;
   width: 200px;
 }
 
-.fa-sort-amount-asc {
+#intro .fa-sort-amount-asc:hover + .menu-add,
+#intro .fa-paw:hover + .menu-add,
+#intro .fa-dollar:hover + .menu-add,
+#intro .fa-film:hover + .menu-add,
+#intro .fa-file-text:hover + .menu-add,
+#intro .fa-envelope:hover + .menu-add {
+  visibility: visible;
+}
+
+#intro .fa-sort-amount-asc {
   transform: rotate(45deg) translateY(150px) rotate(-45deg);
   -webkit-animation: moveHanoi 1s linear; /* Chrome, Safari 5 */
   -moz-animation: moveHanoi 1s linear; /* Firefox 5-15 */
@@ -100,14 +141,7 @@ nav > div > a {
   animation: moveHanoi 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
 }
 
-.fa-sort-amount-asc:hover + .menu-add,
-.fa-paw:hover + .menu-add,
-.fa-dollar:hover + .menu-add,
-.fa-film:hover + .menu-add {
-  visibility: visible;
-}
-
-.fa-paw {
+#intro .fa-paw {
   transform: rotate(135deg) translateY(150px) rotate(-135deg);
   -webkit-animation: movePaw 1s linear; /* Chrome, Safari 5 */
   -moz-animation: movePaw 1s linear; /* Firefox 5-15 */
@@ -115,7 +149,7 @@ nav > div > a {
   animation: movePaw 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
 }
 
-.fa-dollar {
+#intro .fa-dollar {
   transform: rotate(180deg) translateY(150px) rotate(-180deg);
   -webkit-animation: moveDollar 1s linear; /* Chrome, Safari 5 */
   -moz-animation: moveDollar 1s linear; /* Firefox 5-15 */
@@ -123,7 +157,7 @@ nav > div > a {
   animation: moveDollar 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
 }
 
-.fa-film {
+#intro .fa-film {
   transform: rotate(225deg) translateY(150px) rotate(-225deg);
   -webkit-animation: moveFilm 1s linear; /* Chrome, Safari 5 */
   -moz-animation: moveFilm 1s linear; /* Firefox 5-15 */
@@ -131,7 +165,7 @@ nav > div > a {
   animation: moveFilm 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
 }
 
-.fa-file-text {
+#intro .fa-file-text {
   transform: rotate(315deg) translateY(150px) rotate(-315deg);
   -webkit-animation: moveFileText 1s linear; /* Chrome, Safari 5 */
   -moz-animation: moveFileText 1s linear; /* Firefox 5-15 */
@@ -139,13 +173,13 @@ nav > div > a {
   animation: moveFileText 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
 }
 
-.fa-chevron-down {
+#intro .fa-envelope {
   color: rgb(136, 204, 0);
   transform: translateY(150px);
-  -webkit-animation: moveChevron 1s linear; /* Chrome, Safari 5 */
-  -moz-animation: moveChevron 1s linear; /* Firefox 5-15 */
-  -o-animation: moveChevron 1s linear; /* Opera 12+ */
-  animation: moveChevron 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
+  -webkit-animation: moveEnvelope 1s linear; /* Chrome, Safari 5 */
+  -moz-animation: moveEnvelope 1s linear; /* Firefox 5-15 */
+  -o-animation: moveEnvelope 1s linear; /* Opera 12+ */
+  animation: moveEnvelope 1s linear; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
 }
 
 @-webkit-keyframes moveHanoi {
@@ -248,34 +282,24 @@ nav > div > a {
     to   { transform: rotate(315deg) translateY(150px) rotate(-315deg); }
 }
 
-@-webkit-keyframes moveChevron {
+@-webkit-keyframes moveEnvelope {
     from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
     to   { -webkit-transform: rotate(315deg) translateY(150px) rotate(-315deg); }
 }
 
-@-moz-keyframes moveChevron {
+@-moz-keyframes moveEnvelope {
     from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
     to   { -moz-transform: rotate(315deg) translateY(150px) rotate(-315deg); }
 }
 
-@-o-keyframes moveChevron {
+@-o-keyframes moveEnvelope {
     from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
     to   { -o-transform: rotate(315deg) translateY(150px) rotate(-315deg); }
 }
 
-@keyframes moveChevron {
+@keyframes moveEnvelope {
     from { transform: rotate(0deg) translateY(150px) rotate(0deg); }
     to   { transform: rotate(360deg) translateY(150px) rotate(-360deg); }
-}
-
-section {
-  height: auto;
-  transition: all 1s;
-}
-
-section:nth-of-type(odd):not(:first-of-type) {
-  background-color: rgb(53, 53, 53);
-  color: #fff;
 }
 
 .bio {
@@ -308,22 +332,9 @@ section:nth-of-type(odd):not(:first-of-type) {
   color: rgb(136, 204, 0);
 }
 
-.danny {
-  font-size: 150px;
-  margin-top: 100px;
-}
-
-.danny,
 .site h2 {
   font-family: 'Raleway', sans-serif;
-}
-
-.site h2 {
   font-size: 30px;
-}
-
-#feedback-space {
-  padding: 30px 15px;
 }
 
 #quote i {
@@ -342,12 +353,14 @@ section:nth-of-type(odd):not(:first-of-type) {
 #skill-space {
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0;
   text-align: center;
 }
 
 #site-space {
+  background-color: rgb(53, 53, 53);
+  color: #fff;
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
@@ -415,53 +428,16 @@ section:nth-of-type(odd):not(:first-of-type) {
 }
 
 #skill-space {
+  background-color: rgb(53, 53, 53);
   padding: 2% 10%;
 }
 
 #skill-space span:nth-of-type(odd) {
-  color: rgb(53, 53, 53);
+  color: white;
 }
 
 #skill-space span:nth-of-type(even) {
   color: rgb(136, 204, 0);
-}
-
-#feedback-space > div {
-  width: 50%;
-  height: 300px;
-  margin: 10px auto;
-  padding: 10px;
-  text-align: center;
-}
-
-#feedback-space input {
-  height: 35px;
-}
-
-#feedback-space input,
-#feedback-space textarea {
-  margin: 10px auto;
-  border: none;
-  padding: 5px;
-  font-size: 18px;
-  color: rgb(53, 53, 53);
-  display: block;
-}
-
-#feedback-space input:not(:last-of-type),
-#feedback-space textarea {
-  width: 80%;
-}
-
-#feedback-space textarea {
-  font-family: sans-serif;
-  height: 170px;
-}
-
-#feedback-space input:last-of-type {
-  background: rgb(136, 204, 0);
-  color: white;
-  width: 150px;
 }
 
 #media-space {
@@ -469,7 +445,7 @@ section:nth-of-type(odd):not(:first-of-type) {
 }
 
 #media-space > div {
-  width: 70%;
+  width: 60%;
   height: auto;
   margin: 20px auto;
   background: rgba(53, 53, 53, .5);
@@ -484,28 +460,16 @@ footer {
 }
 
 footer img {
-  width: 98%;
-}
-
-footer a {
-  margin: 0 15px;
+  width: 300px;
 }
 
 footer h4 {
   font-size: 20px;
 }
 
-footer > div > div:first-of-type h4:first-of-type {
+footer h4:nth-of-type(2) {
   color: rgb(136, 204, 0);
-  margin-bottom: 20px;
-}
-
-footer i {
-  margin-top: 20px;
-}
-
-footer i:hover {
-  color: rgb(136, 204, 0);
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 799px) {
@@ -513,22 +477,13 @@ footer i:hover {
     width: 280px;
     margin: -10px auto 20px auto;
   }
-  .danny {
-    font-size: 50px;
-  }
+
   #myquote {
     font-size: 20px;
     font-weight: bold;
   }
-  #feedback-space > div {
-    width: 95%;
-  }
+
   #media-space > div {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 800px) and (max-width: 945px) {
-  #feedback-space > div {
     width: 95%;
   }
 }

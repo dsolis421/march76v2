@@ -56,7 +56,7 @@ nav > div {
   width: 300px;
 }
 
-nav > div > a {
+nav > div > div:nth-of-type(2) > a {
   margin: 0 10px;
 }
 
@@ -65,16 +65,17 @@ nav i:hover {
 }
 
 .fa-chevron-down {
-  display: block;
+  color: rgb(136, 204, 0);
+  display: none;
+}
+
+.toggle-menu {
+  display: none;
 }
 
 .toggle-menu a {
   display: block;
   margin: 20px auto;
-}
-
-.collapsed {
-  display: none;
 }
 
 section {
@@ -88,6 +89,7 @@ section {
 }
 
 #intro .fa {
+  color: rgb(136, 204, 0);
   cursor: pointer;
   height: 50px;
   position: absolute;
@@ -105,32 +107,6 @@ section {
   text-align: center;
   top: 260px;
   width: 600px;
-}
-
-#intro .menu-add {
-  background: rgba(53, 53, 53, .7); /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(rgba(53, 53, 53, .9),rgba(53, 53, 53, 0)); /* Standard syntax */
-  border-radius: 100%;
-  color: #fff;
-  height: 200px;
-  line-height: 200px;
-  position: absolute;
-  top: 222px;
-  left: calc(50vw - 113px);
-  visibility: hidden;
-  width: 200px;
-}
-
-#intro .fa-sort-amount-asc:hover + .menu-add,
-#intro .fa-paw:hover + .menu-add,
-#intro .fa-dollar:hover + .menu-add,
-#intro .fa-film:hover + .menu-add,
-#intro .fa-file-text:hover + .menu-add,
-#intro .fa-envelope:hover + .menu-add {
-  visibility: visible;
 }
 
 #intro .fa-sort-amount-asc {
@@ -174,7 +150,6 @@ section {
 }
 
 #intro .fa-envelope {
-  color: rgb(136, 204, 0);
   transform: translateY(150px);
   -webkit-animation: moveEnvelope 1s linear; /* Chrome, Safari 5 */
   -moz-animation: moveEnvelope 1s linear; /* Firefox 5-15 */
@@ -302,36 +277,6 @@ section {
     to   { transform: rotate(360deg) translateY(150px) rotate(-360deg); }
 }
 
-.bio {
-  width: 780px;
-  margin: -20px auto 20px auto;
-  font-size: 20px;
-  overflow-x: hidden;
-}
-
-.bio span {
-  display: inline-block;
-}
-
-.bio span:nth-of-type(1),
-.bio span:nth-of-type(2) {
-  opacity: .4;
-}
-
-.bio span:nth-of-type(3),
-.bio span:nth-of-type(4) {
-  opacity: .6;
-}
-
-.bio span:nth-of-type(5),
-.bio span:nth-of-type(6) {
-  opacity: .8;
-}
-
-.bio span:last-of-type {
-  color: rgb(136, 204, 0);
-}
-
 .site h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
@@ -339,7 +284,6 @@ section {
 
 #quote i {
   height: 100%;
-  color: rgb(136, 204, 0);
 }
 
 #quote > div {
@@ -400,7 +344,7 @@ section {
   height: 280px;
   padding: 10px;
   text-align: left;
-  transition: all .8s;
+  transition: all .5s;
   transition-timing-function: ease-out;
 }
 
@@ -415,12 +359,8 @@ section {
 
 .site:hover > a > div {
   text-align: right;
-  background: rgba(53, 53, 53, .8);
+  background: rgba(136, 204, 0, .2);
   border: 1px solid rgb(136, 204, 0);
-}
-
-.site:hover h2 {
-  color: rgb(136, 204, 0);
 }
 
 .site a > div:hover p {
@@ -472,11 +412,14 @@ footer h4:nth-of-type(2) {
   margin: 20px 0;
 }
 
-@media screen and (max-width: 799px) {
-  .bio {
-    width: 280px;
-    margin: -10px auto 20px auto;
+@media screen and (max-width: 575px) {
+  #intro h1 {
+    font-size: 50px;
+    top: 300px;
   }
+}
+
+@media screen and (max-width: 799px) {
 
   #myquote {
     font-size: 20px;

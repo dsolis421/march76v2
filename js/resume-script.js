@@ -57,10 +57,10 @@ $(document).ready(function(){
     var $job = $(this).attr('data-index');
     renderExperience($experience[$job]);
     if($('.fa-chevron-right').attr('data-index') == 4){
-      $('.fa-chevron-right').css({"color":"var(--base)"});
+      $('.fa-chevron-right').css({"color":"#491D0D"});
     }
     if($('.fa-chevron-right').attr('data-index') < 4){
-      $('.fa-chevron-left').css({"color":"var(--light)"});
+      $('.fa-chevron-left').css({"color":"#6CB8A0"});
       $('.fa-chevron-right').attr('data-index',parseInt($job) + 1);
       $('.fa-chevron-left').attr('data-index',parseInt($job));
     }
@@ -70,10 +70,10 @@ $(document).ready(function(){
     var $job = $(this).attr('data-index');
     renderExperience($experience[$job]);
     if($('.fa-chevron-left').attr('data-index') == 0){
-      $('.fa-chevron-left').css({"color":"var(--base)"});
+      $('.fa-chevron-left').css({"color":"#491D0D"});
     }
     if($('.fa-chevron-left').attr('data-index') > 0){
-      $('.fa-chevron-right').css({"color":"var(--light)"});
+      $('.fa-chevron-right').css({"color":"#6CB8A0"});
       $('.fa-chevron-right').attr('data-index', parseInt($job));
       $('.fa-chevron-left').attr('data-index', parseInt($job - 1));
     }

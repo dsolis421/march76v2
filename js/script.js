@@ -28,9 +28,9 @@ $(document).ready(function() {
 
   $(document).scroll(function() {
     $scroll = $(document).scrollTop();
-    if ($scroll > 250) {
+    if ($scroll > 230) {
       $('.fa-chevron-down').fadeIn(500, "swing");
-    } else if ($scroll < 230) {
+    } else if ($scroll < 210) {
       $('.fa-chevron-down').fadeOut(500, "swing");
     }
   });

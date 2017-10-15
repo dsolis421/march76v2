@@ -1,22 +1,30 @@
-/*grey   rgb(96, 96, 96);
-blue      rgb(0, 119, 179);
-dark blue  rgb(0, 85, 128);
-orange     rgb(230, 92, 0);
-green      rgb(136, 204, 0);
-dark green   rgb(85, 128, 0);
+/*
+blank: #fff;
+light: #6CB8A0;
+med: #FE9A76;
+dark: #E96535;
+base: #491D0D;
 */
+:root {
+  --blank: #fff;
+  --light: #6CB8A0;
+  --med: #FE9A76;
+  --dark: #E96535;
+  --base: #491D0D;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+menu, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -26,8 +34,15 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
 body {
-  color: rgb(53, 53, 53);
+  color: var(--base);
   font-family: sans-serif;
   text-align: center;
 }
@@ -40,6 +55,30 @@ a:focus {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -47,7 +86,7 @@ nav {
 }
 
 nav > div {
-  background: rgb(53, 53, 53);
+  background: var(--dark);
   border-radius: 0 0 10px 10px;
   color: white;
   margin: 0 auto;
@@ -60,12 +99,13 @@ nav > div > div:nth-of-type(2) > a {
   margin: 0 10px;
 }
 
-nav i:hover {
-  color: rgb(136, 204, 0);
+nav i:hover,
+.toggle-menu a:hover {
+  color: var(--light);
 }
 
 .fa-chevron-down {
-  color: rgb(136, 204, 0);
+  color: var(--light);
   display: none;
 }
 
@@ -86,10 +126,11 @@ section {
 #intro {
   height: 500px;
   position: relative;
+  overflow-x: hidden;
 }
 
 #intro .fa {
-  color: rgb(136, 204, 0);
+  color: var(--light);
   cursor: pointer;
   height: 50px;
   position: absolute;
@@ -100,8 +141,6 @@ section {
 }
 
 #intro h1 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 100px;
   left: calc(50vw - 308px);
   position: absolute;
   text-align: center;
@@ -277,12 +316,8 @@ section {
     to   { transform: rotate(360deg) translateY(150px) rotate(-360deg); }
 }
 
-.site h2 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 30px;
-}
-
 #quote i {
+  color: var(--med);
   height: 100%;
 }
 
@@ -303,44 +338,48 @@ section {
 }
 
 #site-space {
-  background-color: rgb(53, 53, 53);
-  color: #fff;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: 0 auto;
+  padding: 30px 0;
+  width: 50%;
 }
 
 .site {
-  width: 300px;
-  height: 300px;
-  margin: 50px 10px;
-  background-position: center;
-  transition: all .8s;
-  transition-timing-function: ease-out;
+  border-top: 5px solid var(--base);
+  margin-top: 10px;
+  position: relative;
+  text-align: left;
 }
 
-.site:nth-of-type(1) {
+.site > div {
+  background: var(--base);
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  float: left;
+  height: 300px;
+  margin-right: 10px;
+  transition: all .8s;
+  transition-timing-function: ease-out;
+  width: 300px;
+}
+
+.site:nth-of-type(1) > div > a > div {
   background-image: url('../img/toh_tnail.png');
 }
 
-.site:nth-of-type(2) {
+.site:nth-of-type(2) > div > a > div {
   background-image: url('../img/pet_tnail.png');
 }
 
-.site:nth-of-type(3) {
+.site:nth-of-type(3) > div > a > div {
   background-image: url('../img/brdgt_tnail.png');
 }
 
-.site:nth-of-type(4) {
+.site:nth-of-type(4) > div > a > div {
   background-image: url('../img/movie_tnail.png');
 }
 
-.site > a > div {
-  background: rgba(53, 53, 53, .2);
-  border: 1px solid white;
-  color: #fff;
+.site > div > a > div {
   height: 280px;
   padding: 10px;
   text-align: left;
@@ -349,51 +388,76 @@ section {
 }
 
 .site p {
-  font-size: 18px;
-  visibility: hidden;
+  margin: 10px;
 }
 
-.site:hover {
-  cursor: pointer;
-}
-
-.site:hover > a > div {
-  text-align: right;
-  background: rgba(136, 204, 0, .2);
-  border: 1px solid rgb(136, 204, 0);
-}
-
-.site a > div:hover p {
-  visibility: visible;
+.site > a {
+  bottom: 0;
+  color: var(--light);
+  position: absolute;
+  right: 0;
 }
 
 #skill-space {
-  background-color: rgb(53, 53, 53);
+  background: var(--base);
   padding: 2% 10%;
 }
 
 #skill-space span:nth-of-type(odd) {
-  color: white;
+  color: var(--blank);
 }
 
 #skill-space span:nth-of-type(even) {
-  color: rgb(136, 204, 0);
+  color: var(--med);
 }
 
-#media-space {
+#resume-space {
   padding: 10px;
 }
 
-#media-space > div {
-  width: 60%;
+#resume-space > div {
   height: auto;
-  margin: 20px auto;
-  background: rgba(53, 53, 53, .5);
+  margin: 30px auto;
+  width: 80%;
+}
+
+#resume-space > div:nth-of-type(2) > h2 {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#resume-space .fa-chevron-right {
+  color: var(--light);
+  cursor: pointer;
+}
+
+#resume-space .fa-chevron-left {
+  color: var(--base);
+  cursor: pointer;
+}
+
+#exp-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#exp-container > div {
+  height: auto;
+  margin: 0 auto;
+  width: 45%;
+}
+
+#exp-container > div:first-of-type {
+  padding: 16px;
 }
 
 footer {
-  background-color: rgb(53, 53, 53);
-  color: #fff;
+  background-color: var(--base);
+  color: var(--blank);
   padding: 20px 0;
   height: auto;
   text-align: center;
@@ -408,7 +472,7 @@ footer h4 {
 }
 
 footer h4:nth-of-type(2) {
-  color: rgb(136, 204, 0);
+  color: var(--light);
   margin: 20px 0;
 }
 
@@ -416,6 +480,19 @@ footer h4:nth-of-type(2) {
   #intro h1 {
     font-size: 50px;
     top: 300px;
+  }
+
+  .site {
+    margin: 10px auto;
+    width: 300px;
+  }
+
+  #exp-container {
+    width: 100%;
+  }
+
+  #exp-container > div {
+    width: 90%;
   }
 }
 
@@ -426,7 +503,16 @@ footer h4:nth-of-type(2) {
     font-weight: bold;
   }
 
-  #media-space > div {
-    width: 95%;
+  #site-space {
+    padding: 10px 0;
+    width: 90%;
+  }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1010px) {
+  #site-space {
+    padding: 20px 0;
+    width: 70%;
   }
 }

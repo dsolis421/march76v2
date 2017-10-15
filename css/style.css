@@ -519,3 +519,81 @@ footer h4:nth-of-type(2) {
     width: 70%;
   }
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /*
+  :root {
+    --blank: #fff;
+    --light: #6CB8A0;
+    --med: #FE9A76;
+    --dark: #E96535;
+    --base: #491D0D;
+  }*/
+
+  body {
+    color: #491D0D;
+  }
+
+  nav > div {
+    background: #E96535;
+  }
+
+  nav i:hover,
+  .toggle-menu a:hover {
+    color: #6CB8A0;
+  }
+
+  .fa-chevron-down {
+    color: #6CB8A0;
+  }
+
+  #intro .fa {
+    color: #6CB8A0;
+  }
+
+  #quote i {
+    color: #FE9A76;
+  }
+
+  .site {
+    border-top: 5px solid #491D0D;
+  }
+
+  .site > div {
+    background: #491D0D;
+  }
+
+  .site > a {
+    color: #6CB8A0;
+  }
+
+  #skill-space {
+    background: #491D0D;
+  }
+
+  #skill-space span:nth-of-type(odd) {
+    color: #fff;
+  }
+
+  #skill-space span:nth-of-type(even) {
+    color: #FE9A76;
+  }
+
+  #resume-space .fa-chevron-right {
+    color: #6CB8A0;
+  }
+
+  #resume-space .fa-chevron-left {
+    color: #491D0D;
+  }
+
+  footer {
+    background-color: #491D0D;
+    color: #fff;
+  }
+
+  footer h4:nth-of-type(2) {
+    color: #6CB8A0;
+  }
+
+}

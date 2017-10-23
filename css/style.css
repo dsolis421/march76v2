@@ -421,6 +421,10 @@ section {
   width: 80%;
 }
 
+#resume-space > div:first-of-type p {
+  margin: 15px 0;
+}
+
 #resume-space > div:nth-of-type(2) > h2 {
   display: inline-block;
   margin: 0 10px;

@@ -7,10 +7,10 @@ base: #491D0D;
 */
 :root {
   --blank: #fff;
-  --light: #6CB8A0;
-  --med: #FE9A76;
-  --dark: #E96535;
-  --base: #491D0D;
+  --light: #669999;
+  --med: #226644;
+  --dark: #226644;
+  --base: #003300;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -317,7 +317,7 @@ section {
 }
 
 #quote i {
-  color: var(--med);
+  color: var(--light);
   height: 100%;
 }
 
@@ -329,7 +329,7 @@ section {
 }
 
 #myquote,
-#skill-space {
+.skill-space {
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -340,7 +340,7 @@ section {
 #site-space {
   margin: 0 auto;
   padding: 30px 0;
-  width: 50%;
+  /*width: 50%;*/
 }
 
 .site {
@@ -364,11 +364,11 @@ section {
 }
 
 .site:nth-of-type(1) > div > a > div {
-  background-image: url('../img/toh_tnail.png');
+  background-image: url('../img/pet_tnail.png');
 }
 
 .site:nth-of-type(2) > div > a > div {
-  background-image: url('../img/pet_tnail.png');
+  background-image: url('../img/toh_tnail.png');
 }
 
 .site:nth-of-type(3) > div > a > div {
@@ -398,17 +398,17 @@ section {
   right: 0;
 }
 
-#skill-space {
+.skill-space {
   background: var(--base);
-  padding: 2% 10%;
+  padding: 12% 10%;
 }
 
-#skill-space span:nth-of-type(odd) {
+.skill-space span:nth-of-type(odd) {
   color: var(--blank);
 }
 
-#skill-space span:nth-of-type(even) {
-  color: var(--med);
+.skill-space span:nth-of-type(even) {
+  color: var(--light);
 }
 
 #resume-space {
@@ -571,15 +571,15 @@ footer h4:nth-of-type(2) {
     color: #6CB8A0;
   }
 
-  #skill-space {
+  .skill-space {
     background: #491D0D;
   }
 
-  #skill-space span:nth-of-type(odd) {
+  .skill-space span:nth-of-type(odd) {
     color: #fff;
   }
 
-  #skill-space span:nth-of-type(even) {
+  .skill-space span:nth-of-type(even) {
     color: #FE9A76;
   }
 

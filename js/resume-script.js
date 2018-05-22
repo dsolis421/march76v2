@@ -1,7 +1,7 @@
 const $experience = [
   { title: 'IT Project Manager',
     company: 'DR Horton, INC',
-    dates: 'Nov 2015 - Present',
+    dates: 'Nov 2015 - Mar 2018',
     responsibilities: ["Project lead for Mortgage QC systems",
       "Supervise junior business analyst",
       "Report project KPI's to executive management"
@@ -57,10 +57,10 @@ $(document).ready(function(){
     var $job = $(this).attr('data-index');
     renderExperience($experience[$job]);
     if($('.fa-chevron-right').attr('data-index') == 4){
-      $('.fa-chevron-right').css({"color":"#491D0D"});
+      $('.fa-chevron-right').css({"color":"#003300"});
     }
     if($('.fa-chevron-right').attr('data-index') < 4){
-      $('.fa-chevron-left').css({"color":"#6CB8A0"});
+      $('.fa-chevron-left').css({"color":"#669999"});
       $('.fa-chevron-right').attr('data-index',parseInt($job) + 1);
       $('.fa-chevron-left').attr('data-index',parseInt($job));
     }
@@ -70,10 +70,10 @@ $(document).ready(function(){
     var $job = $(this).attr('data-index');
     renderExperience($experience[$job]);
     if($('.fa-chevron-left').attr('data-index') == 0){
-      $('.fa-chevron-left').css({"color":"#491D0D"});
+      $('.fa-chevron-left').css({"color":"#003300"});
     }
     if($('.fa-chevron-left').attr('data-index') > 0){
-      $('.fa-chevron-right').css({"color":"#6CB8A0"});
+      $('.fa-chevron-right').css({"color":"#669999"});
       $('.fa-chevron-right').attr('data-index', parseInt($job));
       $('.fa-chevron-left').attr('data-index', parseInt($job - 1));
     }
